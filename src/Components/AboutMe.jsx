@@ -10,7 +10,7 @@ const AboutMe = () => {
         day, I have knowledge in; CSS, HTML, JavaScript, React and more.
         Currently studying at Academlo and in my spare times I play videogames.
       </p>
-      <a id="downloadCV" href="/src/images/CV.pdf" target="_blank" className="mb-6 btn-animation inline-block rounded-full text-lg border-2 border-black mt-[1.5rem] py-2 px-5 go-to-btn hover:text-white">
+      <a id="downloadCV" href="/src/images/CV.pdf" download className="mb-6 btn-animation inline-block rounded-full text-lg border-2 border-black mt-[1.5rem] py-2 px-5 go-to-btn hover:text-white">
         Download CV
       </a>
     </section>
