@@ -8,7 +8,7 @@ const Contact = () => {
       </h3>
       <form
         onSubmit={() => alert("Email sent successfully")}
-        action="https://formsubmit.co/jaredmejia4440@gmail.com"
+        action="https://formsubmit.co/efab2d506f25436bd2dfdc533675b986"
         method="POST"
         className="grid mx-auto gap-4 mt-5 w-[90%] max-w-[1300px] md:grid-cols-2"
       >
