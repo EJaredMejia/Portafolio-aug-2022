@@ -1,9 +1,13 @@
 import React from "react";
+import bgImage from "../images/heroimage.jpg"
 import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {
+  const heroImage = {
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(${bgImage})`
+  }
   return (
-    <section id="home" className="hero-image">
+    <section id="home" style={heroImage} className="hero-image">
       <div className="text-white text-center relative">
         <h2 className="text-[#ff5080] font-semibold tracking-wider text-3xl mb-3">
           Jared Mejia<span className="text-white text-4xl">,</span>
