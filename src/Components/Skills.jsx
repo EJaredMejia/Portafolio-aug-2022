@@ -7,6 +7,7 @@ import redux from "../images/redux.png"
 import reactRouter from "../images/react router.png"
 import bootstrap from "../images/bootsrap.png"
 import tailwindImage from "../images/taliwind.png"
+import githubImage from "../images/github.png"
 
 const Skills = () => {
   return (
@@ -38,6 +39,10 @@ const Skills = () => {
         <div>
           <img className="max-h-[8rem] object-contain max-w-[12rem]" src={reactRouter} alt="javascript" />
           <h4 className="text-center text-lg font-semibold">React router</h4>
+        </div>
+        <div>
+          <img className="max-h-[8rem] object-contain max-w-[12rem]" src={githubImage} alt="javascript" />
+          <h4 className="text-center text-lg font-semibold">Github</h4>
         </div>
         <div>
           <img className="max-h-[8rem] object-contain max-w-[12rem]" src={bootstrap} alt="javascript" />
