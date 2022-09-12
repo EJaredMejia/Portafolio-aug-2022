@@ -37,7 +37,7 @@ const Home = () => {
             }}
           />
         </div>
-        <a className="btn-animation inline-block rounded-full text-xl border-2 mt-[3rem] border-white py-3 px-6 go-to-btn">
+        <a href="#projects" className="btn-animation inline-block rounded-full text-xl border-2 mt-[3rem] border-white py-3 px-6 go-to-btn">
           Go to projects
         </a>
       </div>
