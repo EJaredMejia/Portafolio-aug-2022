@@ -19,10 +19,12 @@ const Home = () => {
               1000, // Waits 1s
               "React developer", // Deletes 'One' and types 'Two'
               2000, // Waits 2s
-              "Web Full-stack student",
+              "Full-stack developer",
               3000,
               "Videogames enjoyer",
               4000,
+              "Back-end developer",
+              5000,
               "", // Types 'Three' without deleting 'Two'
             ]}
             speed={20}
