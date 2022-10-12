@@ -12,7 +12,7 @@
     "start:app": "npm-run-all --parallel start:server start:client",
     "build:client": "cd Client && npm run build",
     "start:app:prod": "cd Server && npm run start:prod",
-    "heroku-postbuild": "npm-run-all install:app build:client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm i && npm-run-all install:app build:client"
   },
   "repository": {
     "type": "git",
