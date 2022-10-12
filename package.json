@@ -12,7 +12,7 @@
     "start:app": "npm-run-all --parallel start:server start:client",
     "build:client": "cd Client && npm run build",
     "start:app:prod": "cd Server && npm run start:prod",
-    "install:build:app": "npm i && npm-run-all install:app build:client"
+    "heroku-postbuild": "npm-run-all install:app build:client"
   },
   "engines": {
     "node": "16.x"
