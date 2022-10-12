@@ -3,6 +3,7 @@ const helmet = require("helmet");
 const compression = require("compression");
 const morgan = require("morgan");
 const cors = require("cors");
+const path = require("path");
 
 const dotenv = require("dotenv");
 
@@ -20,7 +21,14 @@ const app = express();
 // Enable Express app to receive JSON data
 app.use(express.json());
 
-app.use(helmet());
+// Enable static files on public folder (render files on html)
+app.use(express.static(path.join(__dirname, "dist")));
+
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 app.use(compression());
 
@@ -35,6 +43,12 @@ app.use("/api/v1/emails", emailsRouter);
 
 // Global error handler
 app.use(globalErrorHandler);
+
+app.use("/", (req, res, next) => {
+  const indexPath = path.join(__dirname, "dist", "index.html");
+
+  res.status(200).sendFile(indexPath);
+});
 
 // Catch non-existing endpoints
 app.all("*", (req, res) => {

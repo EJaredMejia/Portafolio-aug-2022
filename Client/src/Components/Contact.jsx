@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
-const API_URL = "http://localhost:4000/api/v1/emails";
+const API_URL = `${import.meta.env.VITE_APP_HOST}/emails`;
 
 const Contact = () => {
   const { register, handleSubmit, reset } = useForm();
