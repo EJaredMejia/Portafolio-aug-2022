@@ -12,7 +12,7 @@ const Contact = () => {
       const emailInfo = {
         title: data.title,
         email: data.email,
-        message: `Name:${data.name}, Message: ${data.message}`,
+        message: `Name:${data.name}, Email: ${data.email}, Message: ${data.message}`,
       };
 
       await axios.post(API_URL, emailInfo);
