@@ -7,7 +7,7 @@ dotenv.config({ path: "./config.env" });
 const startServer = async () => {
   try {
     // Set server to listen
-    const PORT = 4000;
+    const PORT = process.env.PORT || 4000;
 
     app.listen(PORT, () => {
       console.log("Express app running!");

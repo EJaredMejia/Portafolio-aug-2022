@@ -1,5 +1,5 @@
 const dotenv = require("dotenv");
-const nodemailer = require("nodemailer")
+const nodemailer = require("nodemailer");
 
 //utils
 const { catchAsync } = require("../utils/catchAsync.util");
@@ -7,16 +7,15 @@ const { catchAsync } = require("../utils/catchAsync.util");
 dotenv.config({ path: "./config.env" });
 
 const sendEmail = catchAsync(async (req, res) => {
-  const { title ,message, email } = req.body;
+  const { title, message, email } = req.body;
 
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: "smtp.ethereal.email",
-    port: 587,
-    secure: false, // true for 465, false for other ports
+    service: "gmail",
+    // true for 465, false for other ports
     auth: {
-      user: process.env.ETH_USERNAME, // generated ethereal user
-      pass: process.env.ETH_USER_PASSWORD, // generated ethereal password
+      user: process.env.EMAIL_HOST, // generated ethereal user
+      pass: process.env.EMAIL_PASSWORD, // generated ethereal password
     },
   });
 
@@ -24,7 +23,7 @@ const sendEmail = catchAsync(async (req, res) => {
     from: email, // sender address
     to: "jaredmejia4440@gmail.com", // list of receivers
     subject: title, // Subject line
-    text: message, // plain text body 
+    text: message, // plain text body
   };
 
   // send mail with defined transport object
@@ -37,7 +36,7 @@ const sendEmail = catchAsync(async (req, res) => {
   console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
   // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
 
-  res.send('Email sent!')
+  res.send("Email sent!");
 });
 
 module.exports = { sendEmail };
