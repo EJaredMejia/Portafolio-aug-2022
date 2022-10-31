@@ -66,7 +66,7 @@ const Projects = () => {
           <div className="relative h-[4rem] px-3 bg-[rgba(0,0,0,0.8)] text-[#ff5080] projects-animation">
             <h4 className="font-bold text-xl pt-1">CRUD</h4>
             <p className="text-lg md:text-sm xl:text-lg font-semibold">
-              react-hook-form, express.js and sequelize(postgress)
+              react-hook-form, express.js and sequelize
             </p>
           </div>
         </div>
