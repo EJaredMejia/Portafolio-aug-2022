@@ -11,6 +11,8 @@ import githubImage from "../images/github.png";
 import nodejs from "../images/node js.png";
 import sequelize from "../images/sequelize.png";
 import express from "../images/express.png";
+import typescript from "../images/Typescript.png"
+import prisma from "../images/prisma.png"
 
 const Skills = () => {
   return (
@@ -115,6 +117,26 @@ const Skills = () => {
           />
           <h4 className="text-center text-lg font-semibold">
             Express JS
+          </h4>
+        </div>
+        <div>
+          <img
+            className="max-h-[8rem] object-contain max-w-[12rem]"
+            src={typescript}
+            alt="Typescript"
+          />
+          <h4 className="text-center text-lg font-semibold">
+            Typescript
+          </h4>
+        </div>
+        <div>
+          <img
+            className="max-h-[8rem] object-contain max-w-[12rem]"
+            src={prisma}
+            alt="Prisma"
+          />
+          <h4 className="text-center text-lg font-semibold">
+            Prisma ORM
           </h4>
         </div>
       </div>
