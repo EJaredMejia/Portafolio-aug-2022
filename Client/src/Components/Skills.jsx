@@ -11,8 +11,10 @@ import githubImage from "../images/github.png";
 import nodejs from "../images/node js.png";
 import sequelize from "../images/sequelize.png";
 import express from "../images/express.png";
-import typescript from "../images/Typescript.png"
-import prisma from "../images/prisma.png"
+import typescript from "../images/Typescript.png";
+import prisma from "../images/prisma.png";
+import python from "../images/python.png";
+import django from "../images/Django.png";
 
 const Skills = () => {
   return (
@@ -115,9 +117,7 @@ const Skills = () => {
             src={express}
             alt="Express"
           />
-          <h4 className="text-center text-lg font-semibold">
-            Express JS
-          </h4>
+          <h4 className="text-center text-lg font-semibold">Express JS</h4>
         </div>
         <div>
           <img
@@ -125,9 +125,7 @@ const Skills = () => {
             src={typescript}
             alt="Typescript"
           />
-          <h4 className="text-center text-lg font-semibold">
-            Typescript
-          </h4>
+          <h4 className="text-center text-lg font-semibold">Typescript</h4>
         </div>
         <div>
           <img
@@ -135,9 +133,23 @@ const Skills = () => {
             src={prisma}
             alt="Prisma"
           />
-          <h4 className="text-center text-lg font-semibold">
-            Prisma ORM
-          </h4>
+          <h4 className="text-center text-lg font-semibold">Prisma ORM</h4>
+        </div>
+        <div>
+          <img
+            className="max-h-[8rem] object-contain max-w-[12rem]"
+            src={python}
+            alt="Python"
+          />
+          <h4 className="text-center text-lg font-semibold">Python</h4>
+        </div>
+        <div>
+          <img
+            className="max-h-[8rem] object-contain max-w-[12rem]"
+            src={django}
+            alt="Django"
+          />
+          <h4 className="text-center text-lg font-semibold">Django</h4>
         </div>
       </div>
       <p
