@@ -3,6 +3,7 @@ import ecommerce from "../images/proyecto e-commerce.png";
 import pokedex from "../images/proyecto pokedex.png";
 import crud from "../images/project CRUD.png";
 import rickAndMorty from "../images/proyecto rick and morty.png";
+import realtimechat from "../images/project realtimechat.png";
 
 const Projects = () => {
   return (
@@ -58,7 +59,7 @@ const Projects = () => {
             target="_blank"
           >
             <img
-              className="mb-[-4.1rem] md:w-auto relative grayscale hover:grayscale-0 cursor-pointer grayscale-animation object-contain"
+              className="mb-[-4rem] md:w-auto relative grayscale hover:grayscale-0 cursor-pointer grayscale-animation object-contain"
               src={crud}
               alt="CRUD"
             />
@@ -67,6 +68,26 @@ const Projects = () => {
             <h4 className="font-bold text-xl pt-1">CRUD</h4>
             <p className="text-lg md:text-sm xl:text-lg font-semibold">
               react-hook-form, express.js and sequelize
+            </p>
+          </div>
+        </div>
+        <div className="border-2 border-black overflow-hidden ">
+          <a
+            className="appear-info"
+            href="http://ec2-13-59-20-55.us-east-2.compute.amazonaws.com/"
+            target="_blank"
+          >
+            <img
+              className="mb-[-4.5rem] md:w-auto relative grayscale hover:grayscale-0 cursor-pointer grayscale-animation object-contain"
+              src={realtimechat}
+              alt="Realtime chat"
+            />
+          </a>
+          <div className="relative h-[4rem] px-3 bg-[rgba(0,0,0,0.8)] text-[#ff5080] projects-animation">
+            <h4 className="font-bold text-xl pt-1">Realtime chat</h4>
+            <p className="text-lg md:text-sm xl:text-lg font-semibold">
+              NestJs, <span className="hidden xl:inline">tailwind, </span>
+              Socket.io, JWT, React, EC2 and RDS AWS
             </p>
           </div>
         </div>

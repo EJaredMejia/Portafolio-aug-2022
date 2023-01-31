@@ -15,6 +15,7 @@ import typescript from "../images/Typescript.png";
 import prisma from "../images/prisma.png";
 import python from "../images/python.png";
 import django from "../images/Django.png";
+import nestJs from "../images/nestjs.png";
 
 const Skills = () => {
   return (
@@ -150,6 +151,14 @@ const Skills = () => {
             alt="Django"
           />
           <h4 className="text-center text-lg font-semibold">Django</h4>
+        </div>
+        <div>
+          <img
+            className="max-h-[8rem] object-contain max-w-[12rem]"
+            src={nestJs}
+            alt="NestJs"
+          />
+          <h4 className="text-center text-lg font-semibold">NestJs</h4>
         </div>
       </div>
       <p
