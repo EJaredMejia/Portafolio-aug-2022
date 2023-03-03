@@ -2,8 +2,9 @@ import React from "react";
 import ecommerce from "../images/proyecto e-commerce.png";
 import pokedex from "../images/proyecto pokedex.png";
 import crud from "../images/project CRUD.png";
-import rickAndMorty from "../images/proyecto rick and morty.png";
+import rickAndMorty from "../images/Rick and morty.png";
 import realtimechat from "../images/project realtimechat.png";
+import customSports from "../images/custom sports.png";
 
 const Projects = () => {
   return (
@@ -94,6 +95,27 @@ const Projects = () => {
         <div className="border-2 border-black overflow-hidden ">
           <a
             className="appear-info"
+            href="http://ec2-18-118-29-121.us-east-2.compute.amazonaws.com/"
+            target="_blank"
+          >
+            <img
+              className="mb-[-4rem] md:w-auto relative grayscale hover:grayscale-0 cursor-pointer grayscale-animation object-contain"
+              src={customSports}
+              alt="Custom sports"
+            />
+          </a>
+          <div className="relative h-[4rem] px-3 bg-[rgba(0,0,0,0.8)] text-[#ff5080] projects-animation">
+            <h4 className="font-bold text-xl pt-1">Custom sports</h4>
+            <p className="text-lg md:text-sm xl:text-lg font-semibold">
+              React,{" "}
+              <span className="hidden xl:inline">styled-components, </span>
+              Express, MongoDB, and EC2
+            </p>
+          </div>
+        </div>
+        <div className="border-2 border-black overflow-hidden ">
+          <a
+            className="appear-info"
             href="https://rickandmortylocations.netlify.app/"
             target="_blank"
           >
@@ -103,7 +125,7 @@ const Projects = () => {
               alt="Rick and Morty Wiki"
             />
           </a>
-          <div className="relative h-[4rem] px-3 bg-[rgba(0,0,0,0.8)] text-[#ff5080] projects-animation">
+          <div className="relative h-[4rem] px-3 bg-[rgba(0,0,0,0.8)] text-[#ff5080]">
             <h4 className="font-bold text-xl pt-1">Rick and morty wiki</h4>
             <p className="text-lg md:text-sm xl:text-lg font-semibold">
               Frontend with react, axios and css.
