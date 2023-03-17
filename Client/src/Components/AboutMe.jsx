@@ -1,5 +1,5 @@
 import React from "react";
-import CV from '../images/Jared Mejia CV.pdf'
+import CV from "../images/Jared Mejia CV.pdf";
 
 const AboutMe = () => {
   return (
@@ -17,8 +17,8 @@ const AboutMe = () => {
         I am a full-stack developer who loves to learn more about programming
         every day, I have knowledge in; CSS, HTML, JavaScript, React and in
         back-end I have knowledge in node js with express and connect databases
-        with the sequelize ORM. Currently studying at Academlo and in my spare
-        times I play videogames.
+        with the sequelize ORM. Graduated from Academlo, I keep studying
+        everyday and in my spare times I play videogames.
       </p>
       <a
         id="downloadCV"
