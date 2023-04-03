@@ -13,7 +13,7 @@ const Projects = () => {
       <h3 className="text-2xl border-b-4 w-fit mx-auto font-semibold border-gray-400">
         My projects
       </h3>
-      <div className="w-11/12 mt-8 m-auto grid gap-4 grid-cols-1 lg:grid-cols-2 place-content-center">
+      <div className="w-11/12 mt-8 m-auto grid gap-4 grid-cols-1 lg:grid-cols-2 justify-items-center">
         <EachProject
           link={"https://api-e-commerce.netlify.app/"}
           image={ecommerce}
