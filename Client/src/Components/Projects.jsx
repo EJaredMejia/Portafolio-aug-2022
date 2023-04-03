@@ -13,7 +13,7 @@ const Projects = () => {
       <h3 className="text-2xl border-b-4 w-fit mx-auto font-semibold border-gray-400">
         My projects
       </h3>
-      <div className="w-11/12 mt-8 m-auto grid gap-4 grid-cols-1 lg:grid-cols-2">
+      <div className="w-11/12 mt-8 m-auto grid gap-4 grid-cols-1 lg:grid-cols-2 place-content-center">
         <EachProject
           link={"https://api-e-commerce.netlify.app/"}
           image={ecommerce}
@@ -33,14 +33,6 @@ const Projects = () => {
           image={pokedex}
           title={"Pokedex"}
           description={"React router, react-redux and axios"}
-        />
-        <EachProject
-          link={"http://ec2-13-59-20-55.us-east-2.compute.amazonaws.com/"}
-          image={realtimechat}
-          title={"Realtime chat"}
-          description={
-            "NestJs, tailwind, Socket.io, JWT, React, EC2 and RDS AWS"
-          }
         />
         <EachProject
           link={"https://crudwithapi.netlify.app/"}
