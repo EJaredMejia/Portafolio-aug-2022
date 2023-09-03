@@ -1,5 +1,5 @@
 import React from "react";
-import CV from "../images/Jared Mejia CV.pdf";
+import CV from "../images/Jared-Mejia-CV.pdf";
 
 const AboutMe = () => {
   return (
@@ -21,6 +21,7 @@ const AboutMe = () => {
         everyday and in my spare times I play videogames.
       </p>
       <a
+        type="application/pdf"
         id="downloadCV"
         href={CV}
         target="_blank"
