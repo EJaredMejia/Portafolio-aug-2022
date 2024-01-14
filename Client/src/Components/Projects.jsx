@@ -23,7 +23,7 @@ const Projects = () => {
           }
         />
         <EachProject
-          link={"http://ec2-18-118-29-121.us-east-2.compute.amazonaws.com/"}
+          link={"https://rdbdd6f34yep6zd2pxzpm2euru0rkbwi.lambda-url.us-east-2.on.aws/"}
           image={customSports}
           title={"Custom Sports"}
           description={"React, styled-components, Express, MongoDB, and EC2"}
