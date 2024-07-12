@@ -1,10 +1,8 @@
 import React from "react";
+import crud from "../images/project CRUD.png";
 import ecommerce from "../images/proyecto e-commerce.png";
 import pokedex from "../images/proyecto pokedex.png";
-import crud from "../images/project CRUD.png";
 import rickAndMorty from "../images/Rick and morty.png";
-import realtimechat from "../images/project realtimechat.png";
-import customSports from "../images/custom sports.png";
 import EachProject from "./EachProject";
 
 const Projects = () => {
@@ -22,12 +20,13 @@ const Projects = () => {
             "React-router, react-redux, tailwind, express.js and sequelize"
           }
         />
-        <EachProject
+        {/* TODO UPDATE WHEN DEPLOY WORKS */}
+        {/* <EachProject
           link={"https://rdbdd6f34yep6zd2pxzpm2euru0rkbwi.lambda-url.us-east-2.on.aws/"}
           image={customSports}
           title={"Custom Sports"}
           description={"React, styled-components, Express, MongoDB, and EC2"}
-        />
+        /> */}
         <EachProject
           link={"https://p0k3w1k1.netlify.app/#/pokedex"}
           image={pokedex}

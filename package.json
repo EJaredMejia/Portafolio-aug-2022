@@ -15,7 +15,7 @@
     "install:build:app": "npm i && npm-run-all install:app build:client"
   },
   "engines": {
-    "node": "16.x"
+    "node": "20.x"
   },
   "repository": {
     "type": "git",
