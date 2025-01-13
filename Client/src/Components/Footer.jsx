@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="flex justify-center gap-5">
         <a
           target="_blank"
-          href="https://github.com/jaredmejia24"
+          href="https://github.com/EJaredMejia"
         >
           <i className="fa-brands fa-2xl fa-github bg-gray-800 cursor-pointer px-3 py-7 rounded-full"></i>
         </a>

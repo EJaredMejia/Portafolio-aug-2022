@@ -4,6 +4,7 @@ import ecommerce from "../images/proyecto e-commerce.png";
 import pokedex from "../images/proyecto pokedex.png";
 import rickAndMorty from "../images/Rick and morty.png";
 import EachProject from "./EachProject";
+import RedMedicatel from './../images/red-medicatel.png'
 
 const Projects = () => {
   return (
@@ -32,6 +33,12 @@ const Projects = () => {
           image={pokedex}
           title={"Pokedex"}
           description={"React router, react-redux and axios"}
+        />
+        <EachProject
+          link={"https://redmedicatel.com/"}
+          image={RedMedicatel}
+          title={"Red Medicatel"}
+          description={"NextJs and Shadcn"}
         />
         <EachProject
           link={"https://crudwithapi.netlify.app/"}

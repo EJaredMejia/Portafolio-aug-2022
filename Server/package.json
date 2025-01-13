@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
-    "start:prod": "node server.js"
+    "start:prod": "node server.js",
+    "install": "pnpm i"
   },
-  "author": "Maximiliano Rangel",
+  "author": "Jared Mejia",
   "license": "ISC",
   "dependencies": {
     "compression": "^1.7.4",
