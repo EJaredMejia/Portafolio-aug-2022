@@ -1,5 +1,5 @@
 import React from "react";
-import CV from "../images/Jared-Mejia-CV.pdf";
+import CV from "../images/jared-mejia-CV.pdf";
 
 const AboutMe = () => {
   return (
