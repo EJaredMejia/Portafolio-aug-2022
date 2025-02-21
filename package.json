@@ -1,35 +1,32 @@
 {
-  "name": "portafolio-aug-2022",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "nuevo-portafolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "install:client": "cd Client && npm install",
-    "install:server": "cd Server && npm install",
-    "install:app": "npm-run-all install:client install:server",
-    "start:client": "npm run dev --prefix Client",
-    "start:server": "npm run start --prefix Server",
-    "start:app": "npm-run-all --parallel start:server start:client",
-    "build:client": "cd Client && npm run build",
-    "start:app:prod": "cd Server && npm run start:prod",
-    "install:build:app": "npm i && npm-run-all install:app build:client"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
   },
-  "engines": {
-    "node": "20.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jaredmejia24/Portafolio-aug-2022.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jaredmejia24/Portafolio-aug-2022/issues"
-  },
-  "homepage": "https://github.com/jaredmejia24/Portafolio-aug-2022#readme",
   "dependencies": {
-    "npm-run-all": "^4.1.5"
+    "axios": "^1.1.2",
+    "framer-motion": "^7.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.37.0",
+    "react-parallax": "^3.5.1",
+    "react-type-animation": "^2.0.9"
   },
-  "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "autoprefixer": "^10.4.8",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1"
+  },
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
 }
