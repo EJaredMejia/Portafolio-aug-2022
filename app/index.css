@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&family=Roboto+Flex:opsz,wght@8..144,300&family=Roboto:wght@100;300;400&family=Rubik:wght@300&family=Sofia&family=Trocchi&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-navbar: rgba(0, 0, 0, 0.9);
+  --color-pink: #ff5080;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero-image {
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("/src/images/hero\ image.jpg"); */
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.go-to-btn {
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.go-to-btn:hover {
+  background-color: #ff5080;
+}
+
+.move-up-and-down {
+  animation: MoveUpDown 1s linear infinite;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.links-animation:hover {
+  color: #ff5080;
+}
+
+.links-animation {
+  transition: color 0.2s ease-in-out;
+}
+
+.btn-animation {
+  transition: background-color 0.3s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  .appear-info + div {
+    opacity: 0;
+    bottom: -1rem;
+    transition-property: bottom opacity;
+    transition: 0.4s ease-in-out;
+  }
+
+  .appear-info:hover + div {
+    opacity: 1;
+    bottom: 0;
+  }
+
+  .appear-info + div:hover {
+    opacity: 1;
+    bottom: 0;
+  }
+}
