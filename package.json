@@ -1,35 +1,40 @@
 {
-  "name": "portafolio-aug-2022",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "nuevo-portafolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "install:client": "cd Client && npm install",
-    "install:server": "cd Server && npm install",
-    "install:app": "npm-run-all install:client install:server",
-    "start:client": "npm run dev --prefix Client",
-    "start:server": "npm run start --prefix Server",
-    "start:app": "npm-run-all --parallel start:server start:client",
-    "build:client": "cd Client && npm run build",
-    "start:app:prod": "cd Server && npm run start:prod",
-    "install:build:app": "npm i && npm-run-all install:app build:client"
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start"
   },
-  "engines": {
-    "node": "20.x"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jaredmejia24/Portafolio-aug-2022.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jaredmejia24/Portafolio-aug-2022/issues"
-  },
-  "homepage": "https://github.com/jaredmejia24/Portafolio-aug-2022#readme",
   "dependencies": {
-    "npm-run-all": "^4.1.5"
+    "@hookform/resolvers": "^4.1.2",
+    "@tanstack/react-router": "^1.109.2",
+    "@tanstack/start": "^1.109.2",
+    "axios": "^1.7.9",
+    "framer-motion": "^7.2.0",
+    "nodemailer": "^6.10.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.54.2",
+    "react-type-animation": "^3.2.0",
+    "sonner": "^2.0.1",
+    "vinxi": "^0.5.3",
+    "zod": "^3.24.2"
   },
-  "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.8",
+    "@tailwindcss/vite": "^4.0.8",
+    "@types/node": "^22.13.5",
+    "@types/nodemailer": "^6.4.17",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "tailwindcss": "^4.0.8",
+    "typescript": "^5.7.3",
+    "vite": "^6.2.0",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
 }
