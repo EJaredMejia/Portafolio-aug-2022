@@ -32,21 +32,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.hero-image {
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url("/src/images/hero\ image.jpg"); */
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .go-to-btn {
   position: relative;
   z-index: 10;
