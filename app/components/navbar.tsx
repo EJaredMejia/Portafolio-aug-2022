@@ -26,7 +26,7 @@ const Navbar = () => {
         <nav
           className={`${
             isNavVisible ? "max-h-48" : "max-h-0"
-          } transition-[max-height] overflow-hidden duration-300 ease-in-out top-[3.5rem] left-0 bg-navbar w-full absolute md:max-h-fit md:static md:w-fit`}
+          } transition-[max-height] overflow-hidden duration-300 ease-in-out top-[3.5rem] left-0 bg-navbar w-full absolute md:bg-inherit md:max-h-fit md:static md:w-fit`}
         >
           <ul className="text-lg flex flex-col text-white items-center gap-1 py-3 md:flex-row md:gap-8 md:pr-5">
             <li>
