@@ -27,3 +27,4 @@ dist-ssr
 .vinxi
 .output
 .netlify
+app.config.timestamp*
