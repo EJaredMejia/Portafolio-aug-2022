@@ -1,5 +1,6 @@
-import { TypeAnimation } from "react-type-animation";
+// import { TypeAnimation } from "react-type-animation";
 import bgImage from "../images/heroimage.jpg";
+import { TypingAnimation } from "./type-animation";
 
 const Home = () => {
   const heroImage = {
@@ -16,36 +17,19 @@ const Home = () => {
           Jared Mejia<span className="text-white text-4xl">,</span>
         </h2>
         <div className="h-[10rem] flex items-center sm:block sm:h-fit">
-          <TypeAnimation
-            className="inline-block"
-            sequence={[
-              "Web developer", // Types 'One'
-              1000, // Waits 1s
-              "React developer", // Deletes 'One' and types 'Two'
-              2000, // Waits 2s
+          <TypingAnimation
+            text={[
+              "Web developer",
+              "React developer",
               "Full-stack developer",
-              3000,
               "Videogames enjoyer",
-              4000,
               "Back-end developer",
-              5000,
-              "", // Types 'Three' without deleting 'Two'
             ]}
-            speed={20}
-            wrapper="p"
-            cursor={true}
-            repeat={Infinity}
-            style={{
-              fontSize: "2.5rem",
-              lineHeight: "2.5rem",
-              fontWeight: "600",
-              letterSpacing: "0.05em",
-            }}
           />
         </div>
         <a
           href="#projects"
-          className="btn-animation inline-block rounded-full text-xl border-2 mt-[3rem] border-white py-3 px-6 go-to-btn"
+          className="btn-animation inline-block rounded-full text-xl border-2 mt-8 border-white py-3 px-6 go-to-btn"
         >
           Go to projects
         </a>

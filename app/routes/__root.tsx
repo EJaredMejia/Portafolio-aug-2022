@@ -8,7 +8,7 @@ import {
 
 import appCss from "@/index.css?url";
 import logo from "@/images/logo.png?url";
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 import { Toaster } from "sonner";
 
 export const Route = createRootRoute({
@@ -22,7 +22,7 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Portafolio",
+        title: "Portfolio - Jared Mejia",
       },
     ],
     links: [
@@ -62,6 +62,7 @@ function RootDocument({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+
         <Scripts />
       </body>
     </html>

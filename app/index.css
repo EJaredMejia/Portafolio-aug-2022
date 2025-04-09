@@ -4,6 +4,20 @@
 @theme {
   --color-navbar: rgba(0, 0, 0, 0.9);
   --color-pink: #ff5080;
+
+  --animate-blink-opacity: blink-opacity 1.1s steps(1) infinite;
+}
+
+@layer utilities {
+  @keyframes blink-opacity {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
 }
 
 /*

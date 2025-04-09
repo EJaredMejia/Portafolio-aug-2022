@@ -5,7 +5,7 @@ import {
   sendServerEmail,
 } from "@/server/email/controller/email.controller";
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
-import { useServerFn } from "@tanstack/start";
+import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { toast } from "sonner";
 
@@ -15,7 +15,7 @@ type FormData = z.infer<typeof contactSchema>;
 const Contact = () => {
   const sendEmail = useServerFn(sendServerEmail);
 
-  const { register, handleSubmit, reset } = useForm<FormData>({
+  const { register, handleSubmit, reset, formState } = useForm<FormData>({
     resolver: standardSchemaResolver(contactSchema),
     defaultValues: {
       email: "",
@@ -86,6 +86,7 @@ const Contact = () => {
           required
         />
         <button
+          disabled={formState.isSubmitting}
           type="submit"
           className="md:col-span-2 rounded-3xl btn-animation inline-block border-2 border-slate-700 w-fit py-2 px-3 mx-auto go-to-btn hover:text-white"
         >

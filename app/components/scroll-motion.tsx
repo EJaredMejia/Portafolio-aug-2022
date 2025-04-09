@@ -1,4 +1,4 @@
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll } from "motion/react";
 
 const ScrollMotion = () => {
   const { scrollYProgress } = useScroll();
