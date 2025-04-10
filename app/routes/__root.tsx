@@ -6,8 +6,11 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
-import appCss from "@/index.css?url";
 import logo from "@/images/logo.png?url";
+import openGraph from "@/images/open-graph.jpg?url";
+import appCss from "@/index.css?url";
+
+import { seo } from "@/utils/seo";
 import { type ReactNode } from "react";
 import { Toaster } from "sonner";
 
@@ -21,9 +24,13 @@ export const Route = createRootRoute({
         name: "viewport",
         content: "width=device-width, initial-scale=1",
       },
-      {
+      ...seo({
         title: "Portfolio - Jared Mejia",
-      },
+        description:
+          "Jared Mejia's portfolio, showcasing skills in React, TypeScript, and web development.",
+        keywords: "Jared Mejia, portfolio, web developer, React, TypeScript",
+        image: openGraph,
+      }),
     ],
     links: [
       {
