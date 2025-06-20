@@ -4,34 +4,32 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev --host",
-    "build": "vinxi build",
-    "start": "vinxi start"
+    "dev": "vite dev",
+    "build": "vite build && tsc --noEmit",
+    "start": "node .output/server/index.mjs"
   },
   "dependencies": {
-    "@hookform/resolvers": "^5.0.1",
-    "@tanstack/react-router": "^1.115.2",
-    "@tanstack/react-start": "^1.115.2",
-    "motion": "^12.6.3",
-    "nodemailer": "^6.10.0",
+    "@hookform/resolvers": "^5.1.1",
+    "@tanstack/react-router": "^1.121.27",
+    "@tanstack/react-start": "^1.121.29",
+    "motion": "^12.18.1",
+    "nodemailer": "^7.0.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-hook-form": "^7.55.0",
-    "sonner": "^2.0.3",
-    "vinxi": "^0.5.3",
-    "zod": "^3.24.2"
+    "react-hook-form": "^7.58.1",
+    "sonner": "^2.0.5",
+    "zod": "^3.25.67"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.3",
-    "@tailwindcss/vite": "^4.1.3",
-    "@types/node": "^22.14.0",
+    "@tailwindcss/vite": "^4.1.10",
+    "@types/node": "^24.0.3",
     "@types/nodemailer": "^6.4.17",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react-swc": "^3.8.1",
-    "tailwindcss": "^4.1.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react-swc": "^3.10.2",
+    "tailwindcss": "^4.1.10",
     "typescript": "^5.8.3",
-    "vite": "^6.2.5",
+    "vite": "^6.3.5",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
