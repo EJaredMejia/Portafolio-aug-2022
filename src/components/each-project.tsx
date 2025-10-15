@@ -16,6 +16,7 @@ const EachProject = ({ image, title, description, link }: EachProjectProps) => {
         src={image}
         alt={title}
         loading="lazy"
+        decoding="async"
       />
       <div className="absolute hidden z-4 bg-[rgba(0,0,0,0.9)] p-2 text-lg inset-x-0 bottom-0 text-[#ff5080] sm:block">
         <h4 className="font-bold text-xl">{title}</h4>

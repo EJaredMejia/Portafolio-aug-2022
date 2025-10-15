@@ -1,4 +1,5 @@
 // import { TypeAnimation } from "react-type-animation";
+import { ArrowDown } from "lucide-react";
 import bgImage from "../images/heroimage.jpg";
 import { TypingAnimation } from "./type-animation";
 
@@ -36,10 +37,10 @@ const Home = () => {
       </div>
       <div className="absolute bottom-8">
         <a href="#iconGoDown">
-          <i
+          <ArrowDown
             id="iconGoDown"
-            className="fa-solid fa-angles-down text-4xl text-white move-up-and-down "
-          ></i>
+            className="size-9 text-white move-up-and-down"
+          />
         </a>
       </div>
     </section>
