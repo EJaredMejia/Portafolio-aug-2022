@@ -5,13 +5,13 @@ import { emailTransporter } from "../utils/transporter.utils";
 import { getTestMessageUrl } from "nodemailer";
 
 export const sendEmailSchema = z.object({
-  email: z.string().email(),
+  email: z.email(),
   title: z.string(),
   message: z.string(),
 });
 
 export const sendServerEmail = createServerFn({ method: "POST" })
-  .validator(sendEmailSchema.parse)
+  .inputValidator(sendEmailSchema)
   .handler(async ({ data }) => {
     const msg = {
       from: data.email,

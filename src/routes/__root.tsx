@@ -45,12 +45,6 @@ export const Route = createRootRoute({
         href: appCss,
       },
     ],
-    scripts: [
-      {
-        src: "https://kit.fontawesome.com/3baa0ab914.js",
-        crossOrigin: "anonymous",
-      },
-    ],
   }),
   component: RootComponent,
 });

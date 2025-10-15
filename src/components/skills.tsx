@@ -23,142 +23,73 @@ const Skills = () => {
         My skills
       </h3>
       <div className="grid gap-12 grid-cols-1 justify-items-center w-[70%] mx-auto mt-8 sm:grid-cols-2 md:grid-cols-3 md:max-w-[1100px]">
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={js}
-            alt="javascript"
-          />
-          <h4 className="text-center text-lg font-semibold">Javascript</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={html}
-            alt="HTML"
-          />
-          <h4 className="text-center text-lg font-semibold">HTML</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={css}
-            alt="CSS"
-          />
-          <h4 className="text-center text-lg font-semibold">CSS</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={reactImage}
-            alt="React"
-          />
-          <h4 className="text-center text-lg font-semibold">React</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={redux}
-            alt="React redux"
-          />
-          <h4 className="text-center text-lg font-semibold">React redux</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={reactRouter}
-            alt="React router"
-          />
-          <h4 className="text-center text-lg font-semibold">React router</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={githubImage}
-            alt="Github"
-          />
-          <h4 className="text-center text-lg font-semibold">Github</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={bootstrap}
-            alt="Bootstrap"
-          />
-          <h4 className="text-center text-lg font-semibold">Bootstrap</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={tailwindImage}
-            alt="Tailwind"
-          />
-          <h4 className="text-center text-lg font-semibold">Tailwind</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={nodejs}
-            alt="Node JS"
-          />
-          <h4 className="text-center text-lg font-semibold">Node JS</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={sequelize}
-            alt="Sequelize"
-          />
-          <h4 className="text-center text-lg font-semibold">Sequelize</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={express}
-            alt="Express"
-          />
-          <h4 className="text-center text-lg font-semibold">Express JS</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={typescript}
-            alt="Typescript"
-          />
-          <h4 className="text-center text-lg font-semibold">Typescript</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={prisma}
-            alt="Prisma"
-          />
-          <h4 className="text-center text-lg font-semibold">Prisma ORM</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={python}
-            alt="Python"
-          />
-          <h4 className="text-center text-lg font-semibold">Python</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={django}
-            alt="Django"
-          />
-          <h4 className="text-center text-lg font-semibold">Django</h4>
-        </div>
-        <div>
-          <img
-            className="max-h-[8rem] object-contain max-w-[12rem]"
-            src={nestJs}
-            alt="NestJs"
-          />
-          <h4 className="text-center text-lg font-semibold">NestJs</h4>
-        </div>
+        <Skill src={js} alt="javascript">
+          Javascript
+        </Skill>
+
+        <Skill src={html} alt="HTML">
+          HTML
+        </Skill>
+
+        <Skill src={css} alt="CSS">
+          CSS
+        </Skill>
+
+        <Skill src={reactImage} alt="React">
+          React
+        </Skill>
+
+        <Skill src={redux} alt="React redux">
+          React redux
+        </Skill>
+
+        <Skill src={reactRouter} alt="React router">
+          React router
+        </Skill>
+
+        <Skill src={githubImage} alt="Github">
+          Github
+        </Skill>
+
+        <Skill src={bootstrap} alt="Bootstrap">
+          Bootstrap
+        </Skill>
+
+        <Skill src={tailwindImage} alt="Tailwind">
+          Tailwind
+        </Skill>
+
+        <Skill src={nodejs} alt="Node JS">
+          Node JS
+        </Skill>
+
+        <Skill src={sequelize} alt="Sequelize">
+          Sequelize
+        </Skill>
+
+        <Skill src={express} alt="Express">
+          Express JS
+        </Skill>
+
+        <Skill src={typescript} alt="Typescript">
+          Typescript
+        </Skill>
+
+        <Skill src={prisma} alt="Prisma">
+          Prisma ORM
+        </Skill>
+
+        <Skill src={python} alt="Python">
+          Python
+        </Skill>
+
+        <Skill src={django} alt="Django">
+          Django
+        </Skill>
+
+        <Skill src={nestJs} alt="NestJs">
+          NestJs
+        </Skill>
       </div>
       <p
         id="projects"
@@ -173,4 +104,22 @@ const Skills = () => {
   );
 };
 
+interface SkillProps {
+  children: React.ReactNode;
+  src: string;
+  alt: string;
+}
+function Skill({ children, ...rest }: SkillProps) {
+  return (
+    <div>
+      <img
+        loading="lazy"
+        decoding="async"
+        className="max-h-[8rem] object-contain max-w-[12rem]"
+        {...rest}
+      />
+      <h4 className="text-center text-lg font-semibold">{children}</h4>
+    </div>
+  );
+}
 export default Skills;

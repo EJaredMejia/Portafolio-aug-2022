@@ -1,3 +1,4 @@
+import { Menu } from "lucide-react";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -18,10 +19,7 @@ const Navbar = () => {
           /JM/
         </a>
         <div className="md:hidden">
-          <i
-            onClick={toogleNavBar}
-            className="fa-solid fa-bars text-xl text-white"
-          ></i>
+          <Menu onClick={toogleNavBar} className="size-5 text-white" />
         </div>
         <nav
           className={`${
