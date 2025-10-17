@@ -1,18 +1,27 @@
+import { Github } from "@/icons/github";
+import { Linkedin } from "@/icons/linkein";
+
 const Footer = () => {
   return (
-    <footer className="w-full bg-black text-white p-8">
+    <footer className="w-full bg-black text-white px-8 pt-8 pb-12">
       <h4 className="text-center text-lg mb-5">
         Jared Mejia {new Date().getFullYear()}
       </h4>
-      <div className="flex justify-center gap-5">
-        <a target="_blank" href="https://github.com/EJaredMejia">
-          <i className="fa-brands fa-2xl fa-github bg-gray-800 cursor-pointer px-3 py-7 rounded-full"></i>
+      <div className="flex justify-center gap-7">
+        <a
+          target="_blank"
+          href="https://github.com/EJaredMejia"
+          className=" cursor-pointer grid place-items-center rounded-full"
+        >
+          <Github fill="white" className="size-7" />
         </a>
+
         <a
           target="_blank"
           href="https://www.linkedin.com/in/jared-mejia-41b58a23a/"
+          className="cursor-pointer grid place-items-center rounded-full"
         >
-          <i className="fa-brands fa-2xl fa-linkedin-in bg-gray-800 cursor-pointer px-4 p-7 rounded-full"></i>
+          <Linkedin className="text-white size-7" />
         </a>
       </div>
     </footer>
