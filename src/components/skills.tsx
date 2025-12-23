@@ -22,7 +22,7 @@ const Skills = () => {
       <h3 className="text-2xl border-b-4 w-fit mx-auto font-semibold border-gray-400">
         My skills
       </h3>
-      <div className="grid gap-12 grid-cols-1 justify-items-center w-[70%] mx-auto mt-8 sm:grid-cols-2 md:grid-cols-3 md:max-w-[1100px]">
+      <div className="grid gap-12 grid-cols-1 justify-items-center w-[70%] mx-auto mt-8 sm:grid-cols-2 md:grid-cols-3 md:max-w-275">
         <Skill src={js} alt="javascript">
           Javascript
         </Skill>
@@ -93,10 +93,10 @@ const Skills = () => {
       </div>
       <p
         id="projects"
-        className="w-[70%] mx-auto mt-14 text-xl sm:grid-cols-2 md:grid-cols-3 md:max-w-[1100px]"
+        className="w-[70%] mx-auto mt-14 text-xl sm:grid-cols-2 md:grid-cols-3 md:max-w-275"
       >
         Are you interested?{" "}
-        <a href="#contactMe" className="font-semibold text-[#ff5080]">
+        <a href="#contactMe" className="font-semibold text-pink">
           Contact Me
         </a>
       </p>
@@ -115,7 +115,7 @@ function Skill({ children, ...rest }: SkillProps) {
       <img
         loading="lazy"
         decoding="async"
-        className="max-h-[8rem] object-contain max-w-[12rem]"
+        className="max-h-32 object-contain max-w-48"
         {...rest}
       />
       <h4 className="text-center text-lg font-semibold">{children}</h4>

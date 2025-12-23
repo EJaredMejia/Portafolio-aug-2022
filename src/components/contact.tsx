@@ -46,13 +46,13 @@ const Contact = () => {
     reset();
   };
   return (
-    <section id="contactMe" className="mt-5 pt-[3rem] bg-gray-100 pb-[3rem]">
+    <section id="contactMe" className="mt-5 pt-12 bg-gray-100 pb-12">
       <h3 className="text-2xl border-b-4 w-fit mx-auto font-semibold border-gray-400">
         Contact me
       </h3>
       <form
         onSubmit={handleSubmit(submitForm)}
-        className="grid mx-auto gap-4 mt-5 w-[90%] max-w-[1300px] md:grid-cols-2"
+        className="grid mx-auto gap-4 mt-5 w-[90%] max-w-325 md:grid-cols-2"
       >
         <input
           className="py-3 px-4 rounded-2xl border border-slate-700"

@@ -4,6 +4,7 @@ import pokedex from "../images/proyecto pokedex.png";
 import RedMedicatel from "../images/red-medicatel.png";
 import rickAndMorty from "../images/Rick and morty.png";
 import EachProject from "./each-project";
+import drizzleToDbml from '../images/drizzle-to-dbml.png';
 
 const Projects = () => {
   return (
@@ -38,6 +39,12 @@ const Projects = () => {
           image={RedMedicatel}
           title={"Red Medicatel"}
           description={"NextJs and Shadcn"}
+        />
+         <EachProject
+          link={"https://drizzle-to-dbml.netlify.app/"}
+          image={drizzleToDbml}
+          title="Drizzle to DBML"
+          description={"Drizzle to DBML coverter made with Tanstack Start and acorn"}
         />
         <EachProject
           link={"https://crudwithapi.netlify.app/"}
