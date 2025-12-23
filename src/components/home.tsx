@@ -14,10 +14,10 @@ const Home = () => {
       className="relative bg-center bg-no-repeat bg-cover bg-fixed h-svh flex flex-col justify-center items-center"
     >
       <div className="text-white text-center relative">
-        <h2 className="text-[#ff5080] font-semibold tracking-wider text-3xl mb-3">
+        <h2 className="text-pink font-semibold tracking-wider text-3xl mb-3">
           Jared Mejia<span className="text-white text-4xl">,</span>
         </h2>
-        <div className="h-[10rem] flex items-center sm:block sm:h-fit">
+        <div className="h-40 flex items-center sm:block sm:h-fit">
           <TypingAnimation
             text={[
               "Web developer",
