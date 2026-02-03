@@ -103,7 +103,7 @@ export const TypingAnimation = ({
   }, [text, speed, state.currentIndex, state.state]);
 
   return (
-    <span className="text-4xl leading-10 font-semibold tracking-wider">
+    <span className="text-4xl w-full leading-10 font-semibold tracking-wider">
       {text[state.currentTextIndex].slice(0, state.currentIndex)}
       <span className="inline-block animate-blink-opacity">|</span>
     </span>

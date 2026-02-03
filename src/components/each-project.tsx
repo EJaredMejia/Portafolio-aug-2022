@@ -4,35 +4,38 @@ type EachProjectProps = {
   description: string;
   link: string;
 };
+
 const EachProject = ({ image, title, description, link }: EachProjectProps) => {
   return (
-    <>
-      <div className="text-pink text-center sm:hidden">
-        <a href={link} target="_blank">
-          <h4 className="font-bold text-xl text-center">{title}</h4>
-        </a>
-        <p className="text-lg font-semibold text-black">{description}</p>
-      </div>
-      <a
-        href={link}
-        target="_blank"
-        className="border-2 border-black relative overflow-hidden group"
-      >
+    <a
+      href={link}
+      target="_blank"
+      className="group block w-full max-w-sm overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:bg-gray-800"
+    >
+      <div className="relative h-48 w-full overflow-hidden">
         <img
-          className="h-full relative z-0 object-fill lg:bg-black lg:grayscale lg:transition lg:ease-in lg:duration-200 appear-info lg:group-hover:grayscale-0"
+          className="h-full w-full object-cover object-center transition-transform duration-500 will-change-transform group-hover:scale-110"
           src={image}
           alt={title}
           loading="lazy"
           decoding="async"
         />
-        <div
-          className="absolute hidden z-4 bg-navbar p-2 text-lg inset-x-0 bottom-0 text-pink sm:block"
-        >
-          <h4 className="font-bold text-xl">{title}</h4>
-          <p className="text-lg font-semibold">{description}</p>
-        </div>
-      </a>
-    </>
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      </div>
+
+      <div className="flex flex-col gap-2 p-5">
+        <h4 className="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-gray-100">
+          {title}
+          <span className="ml-auto inline-block -translate-x-2 text-pink opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+            ↗
+          </span>
+        </h4>
+        <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
+          {description}
+        </p>
+      </div>
+    </a>
   );
 };
 

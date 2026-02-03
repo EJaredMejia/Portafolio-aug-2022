@@ -38,7 +38,7 @@ const Navbar = () => {
               </a>
             </li>
             <li>
-              <a href="#downloadCV" className="links-animation cursor-pointer">
+              <a href="#skills" className="links-animation cursor-pointer">
                 Skills
               </a>
             </li>

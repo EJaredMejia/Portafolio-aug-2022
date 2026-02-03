@@ -46,53 +46,59 @@ const Contact = () => {
     reset();
   };
   return (
-    <section id="contactMe" className="mt-5 pt-12 bg-gray-100 pb-12">
-      <h3 className="text-2xl border-b-4 w-fit mx-auto font-semibold border-gray-400">
-        Contact me
-      </h3>
-      <form
-        onSubmit={handleSubmit(submitForm)}
-        className="grid mx-auto gap-4 mt-5 w-[90%] max-w-325 md:grid-cols-2"
-      >
-        <input
-          className="py-3 px-4 rounded-2xl border border-slate-700"
-          type="text"
-          placeholder="Name..."
-          required
-          {...register("name")}
-        />
-        <input
-          {...register("email")}
-          className="py-3 px-4 rounded-2xl border border-slate-700"
-          type="email"
-          placeholder="Email address"
-          required
-        />
-        <input
-          {...register("title")}
-          name="title"
-          className="md:col-span-2  py-3 px-4 rounded-2xl border border-slate-700"
-          type="text"
-          placeholder="Title..."
-          required
-        />
-        <textarea
-          {...register("message")}
-          name="message"
-          className="md:col-span-2  py-3 px-4 rounded-2xl border border-slate-700"
-          cols={30}
-          rows={10}
-          placeholder="Message..."
-          required
-        />
-        <button
-          disabled={formState.isSubmitting}
-          type="submit"
-          className="md:col-span-2 rounded-3xl btn-animation inline-block border-2 border-slate-700 w-fit py-2 px-3 mx-auto go-to-btn hover:text-white"
+    <section className="bg-gray-50  pb-24 dark:bg-gray-900" id="contactMe">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+            Contact me
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-500 dark:text-gray-400">
+            Have a project in mind? Let's talk and build something great
+            together.
+          </p>
+        </div>
+        <form
+          onSubmit={handleSubmit(submitForm)}
+          className="mx-auto mt-16 grid max-w-3xl gap-4 md:grid-cols-2"
         >
-          Send message
-        </button>
-      </form>
+          <input
+            className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white"
+            type="text"
+            placeholder="Name..."
+            required
+            {...register("name")}
+          />
+          <input
+            {...register("email")}
+            className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white"
+            type="email"
+            placeholder="Email address"
+            required
+          />
+          <input
+            {...register("title")}
+            className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white md:col-span-2"
+            type="text"
+            placeholder="Title..."
+            required
+          />
+          <textarea
+            {...register("message")}
+            className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white md:col-span-2"
+            cols={30}
+            rows={10}
+            placeholder="Message..."
+            required
+          />
+          <button
+            disabled={formState.isSubmitting}
+            type="submit"
+            className="mx-auto cursor-pointer inline-block rounded-3xl bg-pink px-8 py-3 font-semibold text-white transition-all hover:opacity-90 md:col-span-2"
+          >
+            Send message
+          </button>
+        </form>
+      </div>
     </section>
   );
 };
