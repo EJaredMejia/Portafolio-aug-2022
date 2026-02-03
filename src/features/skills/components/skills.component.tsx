@@ -81,7 +81,7 @@ export function Skills() {
         {/* Mobile: Marquee */}
         <div className="block md:hidden overflow-hidden py-4 pause-on-hover">
           <div className="animate-marquee flex gap-4">
-            {[...skills, ...skills].map((skill, index) => (
+            {skills.map((skill, index) => (
               <SkillCard
                 key={`${skill.name}-${index}`}
                 skill={skill}
