@@ -5,7 +5,7 @@ import Home from "@/components/home";
 import Navbar from "@/components/navbar";
 import Projects from "@/components/projects";
 import ScrollMotion from "@/components/scroll-motion";
-import Skills from "@/components/skills";
+import { Skills } from "@/features/skills/components/skills.component";
 
 import { createFileRoute } from "@tanstack/react-router";
 

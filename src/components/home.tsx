@@ -1,4 +1,3 @@
-// import { TypeAnimation } from "react-type-animation";
 import { ArrowDown } from "lucide-react";
 import bgImage from "../images/heroimage.jpg";
 import { TypingAnimation } from "./type-animation";
@@ -15,19 +14,17 @@ const Home = () => {
     >
       <div className="text-white text-center relative">
         <h2 className="text-pink font-semibold tracking-wider text-3xl mb-3">
-          Jared Mejia<span className="text-white text-4xl">,</span>
+          Jared Mejía
         </h2>
-        <div className="h-40 flex items-center sm:block sm:h-fit">
+        <div className="h-fit flex items-center sm:block">
           <TypingAnimation
-            text={[
-              "Web developer",
-              "React developer",
-              "Full-stack developer",
-              "Videogames enjoyer",
-              "Back-end developer",
-            ]}
+            text={["Software Engineer", "Full-stack Developer", "React Expert"]}
           />
         </div>
+        <p className="mt-6 text-lg px-2 text-gray-300 max-w-lg mx-auto leading-relaxed">
+          Over 2 years of experience delivering impactful web solutions and
+          workflow automation for banking, healthcare, and education sectors.
+        </p>
         <a
           href="#projects"
           className="btn-animation inline-block rounded-full text-xl border-2 mt-8 border-white py-3 px-6 go-to-btn"

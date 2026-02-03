@@ -3,61 +3,73 @@ import ecommerce from "../images/proyecto e-commerce.png";
 import pokedex from "../images/proyecto pokedex.png";
 import RedMedicatel from "../images/red-medicatel.png";
 import rickAndMorty from "../images/Rick and morty.png";
+import drizzleToDbml from "../images/drizzle-to-dbml.png";
 import EachProject from "./each-project";
-import drizzleToDbml from '../images/drizzle-to-dbml.png';
 
 const Projects = () => {
+  const projects = [
+    {
+      link: "https://api-e-commerce.netlify.app/",
+      image: ecommerce,
+      title: "Fintech E-commerce Ecosystem",
+      description:
+        "Architected a scalable e-commerce solution for the financial sector, implementing robust state management and secure transaction workflows with Sequelize/PostgreSQL.",
+    },
+    {
+      link: "https://p0k3w1k1.netlify.app/#/pokedex",
+      image: pokedex,
+      title: "Interactive Data Visualization",
+      description:
+        "Engineered a high-performance data exploration interface utilizing Redux for complex state synchronization and RESTful API optimizations.",
+    },
+    {
+      link: "https://redmedicatel.com/",
+      image: RedMedicatel,
+      title: "Healthcare Provider Platform",
+      description:
+        "Delivered a pixel-perfect, accessible digital presence for a healthcare organization, optimized for SEO and cross-device performance using Next.js.",
+    },
+    {
+      link: "https://drizzle-to-dbml.netlify.app/",
+      image: drizzleToDbml,
+      title: "Developer Workflow Utility",
+      description:
+        "Developed an open-source tool to accelerate database design processes by automating the conversion of Drizzle ORM schemas into DBML visualizations.",
+    },
+    {
+      link: "https://crudwithapi.netlify.app/",
+      image: crud,
+      title: "Enterprise Management System",
+      description:
+        "Implemented a comprehensive administrative dashboard featuring granular access controls, transactional integrity, and dynamic data validation.",
+    },
+    {
+      link: "https://rickandmortylocations.netlify.app/",
+      image: rickAndMorty,
+      title: "Discovery Hub Prototype",
+      description:
+        "Designed and built a character-driven web experience focusing on modern UI design patterns and efficient multi-route navigation structure.",
+    },
+  ];
+
   return (
-    <section className="py-6">
-      <h3 className="text-2xl border-b-4 w-fit mx-auto font-semibold border-gray-400">
-        My projects
-      </h3>
-      <div className="w-11/12 mt-8 m-auto grid gap-4 grid-cols-1 lg:grid-cols-2 justify-items-center">
-        <EachProject
-          link={"https://api-e-commerce.netlify.app/"}
-          image={ecommerce}
-          title={"E-commerce"}
-          description={
-            "React-router, react-redux, tailwind, express.js and sequelize"
-          }
-        />
-        {/* TODO UPDATE WHEN DEPLOY WORKS */}
-        {/* <EachProject
-          link={"https://rdbdd6f34yep6zd2pxzpm2euru0rkbwi.lambda-url.us-east-2.on.aws/"}
-          image={customSports}
-          title={"Custom Sports"}
-          description={"React, styled-components, Express, MongoDB, and EC2"}
-        /> */}
-        <EachProject
-          link={"https://p0k3w1k1.netlify.app/#/pokedex"}
-          image={pokedex}
-          title={"Pokedex"}
-          description={"React router, react-redux and axios"}
-        />
-        <EachProject
-          link={"https://redmedicatel.com/"}
-          image={RedMedicatel}
-          title={"Red Medicatel"}
-          description={"NextJs and Shadcn"}
-        />
-         <EachProject
-          link={"https://drizzle-to-dbml.netlify.app/"}
-          image={drizzleToDbml}
-          title="Drizzle to DBML"
-          description={"Drizzle to DBML coverter made with Tanstack Start and acorn"}
-        />
-        <EachProject
-          link={"https://crudwithapi.netlify.app/"}
-          image={crud}
-          title="CRUD"
-          description={"react-hook-form, express.js and sequelize"}
-        />
-        <EachProject
-          link={"https://rickandmortylocations.netlify.app/"}
-          image={rickAndMorty}
-          title="Rick and morty wiki"
-          description={"Frontend with react, axios and css"}
-        />
+    <section className="bg-gray-50 py-24 dark:bg-gray-900" id="projects">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+            Featured Projects
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-500 dark:text-gray-400">
+            A diverse collection of web applications showcasing my expertise in
+            full-stack development and modern UI design.
+          </p>
+        </div>
+
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+          {projects.map((project, index) => (
+            <EachProject key={index} {...project} />
+          ))}
+        </div>
       </div>
     </section>
   );
