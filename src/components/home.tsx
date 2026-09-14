@@ -2,6 +2,8 @@ import { ArrowDown } from "lucide-react";
 import bgImage from "../images/heroimage.jpg";
 import { TypingAnimation } from "./type-animation";
 
+const dateStartedWorking = new Date(2023, 3);
+
 const Home = () => {
   const heroImage = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(${bgImage})`,
@@ -22,8 +24,9 @@ const Home = () => {
           />
         </div>
         <p className="mt-6 text-lg px-2 text-gray-300 max-w-lg mx-auto leading-relaxed">
-          Over 2 years of experience delivering impactful web solutions and
-          workflow automation for banking, healthcare, and education sectors.
+          Over {new Date().getFullYear() - dateStartedWorking.getFullYear()}{" "}
+          years of experience delivering impactful web solutions and workflow
+          automation for banking, healthcare, and education sectors.
         </p>
         <a
           href="#projects"

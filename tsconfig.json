@@ -6,7 +6,6 @@
     "target": "ES2022",
     "skipLibCheck": true,
     "strictNullChecks": true,
-    "baseUrl": ".",
 
     "strict": true,
     "noUnusedLocals": true,
@@ -15,7 +14,8 @@
     "noUncheckedSideEffectImports": true,
 
     "paths": {
-      "@/*": ["src/*"]
+      "*": ["./*"],
+      "@/*": ["./src/*"]
     }
   }
 }
