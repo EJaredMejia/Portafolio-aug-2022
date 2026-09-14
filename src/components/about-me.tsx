@@ -14,16 +14,15 @@ const AboutMe = () => {
           <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
             I am a versatile Software Engineer with a proven track record of
             delivering impactful web applications across banking, healthcare,
-            and education. Currently, I am driving innovation at Edutechloft,
-            where I architect Azure Functions for workflow automation and
-            engineer complex data reporting systems with SSRS.
+            education, and robotics. My experience involves driving innovation
+            by architecting serverless workflows (AWS CDK, Azure Functions)
+            and engineering high-performance systems with modern backend technologies like ElysiaJS and ClickHouseDB.
           </p>
           <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
-            My experience includes scaling frontend architectures at Ficohsa
-            using Micro-frontends (Module Federation) and developing secure
-            cloud solutions at Ingenieria Digital. I specialize in bridging the
+            I've scaled frontend architectures using Micro-frontends (Module Federation)
+            and integrated secure cloud solutions. I specialize in bridging the
             gap between robust backend logic and intuitive, high-performance
-            user interfaces.
+            user interfaces across diverse sectors.
           </p>
           <div className="mt-10 flex items-center gap-x-6">
             <a

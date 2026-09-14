@@ -20,7 +20,7 @@ const Home = () => {
         </h2>
         <div className="h-fit flex items-center sm:block">
           <TypingAnimation
-            text={["Software Engineer", "Full-stack Developer", "React Expert"]}
+            text={["Software Engineer", "Full-stack Developer", "React Expert", "Backend Engineer"]}
           />
         </div>
         <p className="mt-6 text-lg px-2 text-gray-300 max-w-lg mx-auto leading-relaxed">
