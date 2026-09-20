@@ -36,7 +36,7 @@ const Home = () => {
         </a>
       </div>
       <div className="absolute bottom-8">
-        <a href="#iconGoDown">
+        <a href="#iconGoDown" aria-label="Go to projects">
           <ArrowDown
             id="iconGoDown"
             className="size-9 text-white move-up-and-down"

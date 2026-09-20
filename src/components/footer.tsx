@@ -4,9 +4,9 @@ import { Linkedin } from "@/icons/linkein";
 const Footer = () => {
   return (
     <footer className="w-full bg-black text-white px-8 pt-8 pb-12">
-      <h4 className="text-center text-lg mb-5">
+      <p className="text-center text-lg mb-5">
         Jared Mejia {new Date().getFullYear()}
-      </h4>
+      </p>
       <div className="flex justify-center gap-7">
         <a
           target="_blank"

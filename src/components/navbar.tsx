@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <section className="fixed w-full bg-black/90 backdrop-blur-md z-50">
+    <header className="fixed w-full bg-black/90 backdrop-blur-md z-50">
       <div className="flex px-5 py-3 items-center justify-between border-b border-white/10 md:justify-between">
         <a
           href="#home"
@@ -65,7 +65,7 @@ const Navbar = () => {
           </ul>
         </nav>
       </div>
-    </section>
+    </header>
   );
 };
 

@@ -62,6 +62,7 @@ const Contact = () => {
           className="mx-auto mt-16 grid max-w-3xl gap-4 md:grid-cols-2"
         >
           <input
+            aria-label="Your Name"
             className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white"
             type="text"
             placeholder="Name..."
@@ -69,6 +70,7 @@ const Contact = () => {
             {...register("name")}
           />
           <input
+            aria-label="Your Email"
             {...register("email")}
             className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white"
             type="email"
@@ -76,6 +78,7 @@ const Contact = () => {
             required
           />
           <input
+            aria-label="Subject or Title"
             {...register("title")}
             className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white md:col-span-2"
             type="text"
@@ -83,6 +86,7 @@ const Contact = () => {
             required
           />
           <textarea
+            aria-label="Your Message"
             {...register("message")}
             className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white md:col-span-2"
             cols={30}

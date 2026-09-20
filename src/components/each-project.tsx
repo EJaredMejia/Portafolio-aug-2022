@@ -25,12 +25,12 @@ const EachProject = ({ image, title, description, link }: EachProjectProps) => {
       </div>
 
       <div className="flex flex-col gap-2 p-5">
-        <h4 className="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-gray-100">
+        <p className="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-gray-100">
           {title}
           <span className="ml-auto inline-block -translate-x-2 text-pink opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
             ↗
           </span>
-        </h4>
+        </p>
         <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
           {description}
         </p>

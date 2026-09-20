@@ -9,6 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
+import heroImage from "@/images/heroimage.jpg?url";
 import logo from "@/images/logo.png?url";
 import openGraph from "@/images/open-graph.jpg?url";
 import appCss from "@/index.css?url";
@@ -41,6 +42,11 @@ export const Route = createRootRoute({
         href: logo,
       },
       {
+        rel: "preload",
+        as: "image",
+        href: heroImage,
+      },
+      {
         rel: "stylesheet",
         href: appCss,
       },
@@ -60,7 +66,7 @@ function RootComponent() {
 
 function RootDocument({ children }: { children: ReactNode }) {
   return (
-    <html>
+    <html lang="en">
       <head>
         <HeadContent />
       </head>

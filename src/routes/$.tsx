@@ -9,6 +9,8 @@ import ScrollMotion from "@/components/scroll-motion";
 import { Skills } from "@/features/skills/components/skills.component";
 
 import { createFileRoute } from "@tanstack/react-router";
+import { Hydrate } from "@tanstack/react-start";
+import { idle, visible } from "@tanstack/react-start/hydration";
 
 export const Route = createFileRoute("/$")({
   component: RouteComponent,
@@ -19,12 +21,30 @@ function RouteComponent() {
     <>
       <Navbar />
       <ScrollMotion />
-      <Home />
-      <AboutMe />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Contact />
+      <main>
+        {/* Above-the-fold: immediate hydration */}
+        <Home />
+
+        <Hydrate when={visible()}>
+          <AboutMe />
+        </Hydrate>
+
+        <Hydrate when={visible()}>
+          <Experience />
+        </Hydrate>
+
+        <Hydrate when={visible()}>
+          <Skills />
+        </Hydrate>
+
+        <Hydrate when={visible()}>
+          <Projects />
+        </Hydrate>
+
+        <Hydrate when={visible()} prefetch={idle()}>
+          <Contact />
+        </Hydrate>
+      </main>
       <Footer />
     </>
   );
