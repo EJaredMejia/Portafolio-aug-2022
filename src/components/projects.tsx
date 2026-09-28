@@ -1,4 +1,3 @@
-import crud from "../images/project CRUD.png";
 import ecommerce from "../images/proyecto e-commerce.png";
 import pokedex from "../images/proyecto pokedex.png";
 import RedMedicatel from "../images/red-medicatel.png";
@@ -9,18 +8,11 @@ import EachProject from "./each-project";
 const Projects = () => {
   const projects = [
     {
-      link: "https://api-e-commerce.netlify.app/",
+      link: "https://e-commerce.jared-mejia.workers.dev/",
       image: ecommerce,
       title: "Fintech E-commerce Ecosystem",
       description:
         "Architected a scalable e-commerce solution for the financial sector, implementing robust state management and secure transaction workflows with Sequelize/PostgreSQL.",
-    },
-    {
-      link: "https://p0k3w1k1.netlify.app/#/pokedex",
-      image: pokedex,
-      title: "Interactive Data Visualization",
-      description:
-        "Engineered a high-performance data exploration interface utilizing Redux for complex state synchronization and RESTful API optimizations.",
     },
     {
       link: "https://redmedicatel.com/",
@@ -37,11 +29,11 @@ const Projects = () => {
         "Developed an open-source tool to accelerate database design processes by automating the conversion of Drizzle ORM schemas into DBML visualizations.",
     },
     {
-      link: "https://crudwithapi.netlify.app/",
-      image: crud,
-      title: "Enterprise Management System",
+      link: "https://p0k3w1k1.netlify.app/#/pokedex",
+      image: pokedex,
+      title: "Interactive Data Visualization",
       description:
-        "Implemented a comprehensive administrative dashboard featuring granular access controls, transactional integrity, and dynamic data validation.",
+        "Engineered a high-performance data exploration interface utilizing Redux for complex state synchronization and RESTful API optimizations.",
     },
     {
       link: "https://rickandmortylocations.netlify.app/",
@@ -65,9 +57,13 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-items-center">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-6 justify-items-center">
           {projects.map((project, index) => (
-            <EachProject key={index} {...project} />
+            <EachProject
+              key={index}
+              className={projects.length - 2 === index ? "lg:col-start-2" : ""}
+              {...project}
+            />
           ))}
         </div>
       </div>

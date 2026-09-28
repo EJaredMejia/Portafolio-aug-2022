@@ -3,14 +3,21 @@ type EachProjectProps = {
   title: string;
   description: string;
   link: string;
+  className?: string;
 };
 
-const EachProject = ({ image, title, description, link }: EachProjectProps) => {
+const EachProject = ({
+  image,
+  title,
+  description,
+  link,
+  className = "",
+}: EachProjectProps) => {
   return (
     <a
       href={link}
       target="_blank"
-      className="group block w-full max-w-sm overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:bg-gray-800"
+      className={`group block lg:col-span-2 w-full max-w-sm overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:bg-gray-800 ${className}`}
     >
       <div className="relative h-48 w-full overflow-hidden">
         <img

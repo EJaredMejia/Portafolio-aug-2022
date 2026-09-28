@@ -19,6 +19,10 @@ import { type ReactNode } from "react";
 import { Toaster } from "sonner";
 
 export const Route = createRootRoute({
+  headers: () => ({
+    "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+    "CDN-Cache-Control": "public, max-age=3600, stale-while-revalidate=86400",
+  }),
   head: () => ({
     meta: [
       {
@@ -70,7 +74,7 @@ function RootDocument({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body style={{ backgroundColor: "#000" }} className="bg-black">
         {children}
 
         <Scripts />

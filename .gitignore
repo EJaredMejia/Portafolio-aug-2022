@@ -24,6 +24,9 @@ dist-ssr
 *.sw?
 
 .env*
+.dev.vars
+.wrangler
+worker-configuration.d.ts
 .vinxi
 .output
 .netlify
