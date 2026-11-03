@@ -27,7 +27,7 @@ const Home = () => {
             type="application/pdf"
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-pink-deep px-6 py-3 font-semibold text-white transition-colors hover:bg-ink"
+            className="rounded-full bg-pink-deep px-6 py-3 font-semibold text-on-pink transition-colors hover:bg-ink hover:text-paper"
           >
             Download CV
           </a>

@@ -27,7 +27,7 @@ const EachProject = ({
         rel="noreferrer"
         tabIndex={-1}
         aria-hidden="true"
-        className="block overflow-hidden rounded-lg border border-line bg-white"
+        className="block overflow-hidden rounded-lg border border-line bg-field"
       >
         <img
           className="aspect-2/1 w-full object-cover object-top"

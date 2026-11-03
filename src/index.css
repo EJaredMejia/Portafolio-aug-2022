@@ -9,12 +9,30 @@
   --color-ink: #151a2d;
   --color-muted: #5b6378;
   --color-line: #dde1ea;
+  --color-field: #ffffff;
   /* brand pink for marks; pink-deep for text and fills that need contrast */
   --color-pink: #ff5080;
   --color-pink-deep: #d4245a;
+  --color-on-pink: #ffffff;
 }
 
 @layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-paper: #10131f;
+      --color-ink: #e8ebf4;
+      --color-muted: #a0a8bd;
+      --color-line: #272d42;
+      --color-field: #171b2a;
+      --color-pink-deep: #ff6b93;
+      --color-on-pink: #10131f;
+    }
+  }
+
   *,
   ::after,
   ::before,

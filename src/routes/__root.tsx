@@ -57,7 +57,7 @@ function RootComponent() {
   return (
     <RootDocument>
       <Outlet />
-      <Toaster theme="light" />
+      <Toaster theme="system" />
     </RootDocument>
   );
 }

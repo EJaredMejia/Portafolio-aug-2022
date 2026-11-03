@@ -47,7 +47,7 @@ const Contact = () => {
     reset();
   };
   const fieldClass =
-    "mt-2 w-full rounded-md border border-line bg-white px-4 py-3 text-ink placeholder:text-muted/70 focus:border-pink-deep focus:outline-none";
+    "mt-2 w-full rounded-md border border-line bg-field px-4 py-3 text-ink placeholder:text-muted/70 focus:border-pink-deep focus:outline-none";
 
   return (
     <Section id="contactMe" title="Contact">
@@ -101,7 +101,7 @@ const Contact = () => {
           <button
             disabled={formState.isSubmitting}
             type="submit"
-            className="cursor-pointer rounded-full bg-pink-deep px-7 py-3 font-semibold text-white transition-colors hover:bg-ink disabled:cursor-wait disabled:opacity-60"
+            className="cursor-pointer rounded-full bg-pink-deep px-7 py-3 font-semibold text-on-pink transition-colors hover:bg-ink hover:text-paper disabled:cursor-wait disabled:opacity-60"
           >
             {formState.isSubmitting ? "Sending…" : "Send message"}
           </button>
