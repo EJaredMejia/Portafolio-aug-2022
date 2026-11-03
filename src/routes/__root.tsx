@@ -13,7 +13,7 @@ import logo from "@/images/logo.png?url";
 import openGraph from "@/images/open-graph.jpg?url";
 import appCss from "@/index.css?url";
 
-import { seo } from "@/utils/seo";
+import { SITE_URL, seo } from "@/utils/seo";
 import { type ReactNode } from "react";
 import { Toaster } from "sonner";
 
@@ -32,14 +32,17 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       ...seo({
-        title: "Portfolio - Jared Mejia",
+        title: "Jared Mejía, Full-stack Engineer (TypeScript, React, Node.js)",
         description:
-          "Jared Mejia's portfolio, showcasing skills in React, TypeScript, and web development.",
-        keywords: "Jared Mejia, portfolio, web developer, React, TypeScript",
+          "Full-stack engineer with 3+ years building web apps in TypeScript, React and Node.js on AWS and Azure. Open to remote roles with US teams.",
+        keywords:
+          "Jared Mejia, full-stack engineer, TypeScript, React, Node.js, AWS, remote",
         image: openGraph,
       }),
     ],
     links: [
+      // The catch-all route serves this page at any path; point search engines at the real one
+      { rel: "canonical", href: `${SITE_URL}/` },
       {
         rel: "icon",
         href: logo,
@@ -47,6 +50,24 @@ export const Route = createRootRoute({
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Jared Mejía",
+          jobTitle: "Full-stack Engineer",
+          url: `${SITE_URL}/`,
+          address: { "@type": "PostalAddress", addressCountry: "HN" },
+          knowsAbout: ["TypeScript", "React", "Node.js", "AWS", "Azure"],
+          sameAs: [
+            "https://github.com/EJaredMejia",
+            "https://www.linkedin.com/in/jared-mejia-41b58a23a/",
+          ],
+        }),
       },
     ],
   }),
