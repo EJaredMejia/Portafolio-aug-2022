@@ -1,81 +1,48 @@
-import ecommerce from "../images/proyecto e-commerce.png";
-import pokedex from "../images/proyecto pokedex.png";
-import RedMedicatel from "../images/red-medicatel.png";
-import rickAndMorty from "../images/Rick and morty.png";
-import drizzleToDbml from "../images/drizzle-to-dbml.png";
 import clipit from "../images/clipit.svg";
+import drizzleToDbml from "../images/drizzle-to-dbml.png";
+import RedMedicatel from "../images/red-medicatel.png";
 import EachProject from "./each-project";
+import Section from "./section";
 
 const Projects = () => {
   const projects = [
     {
       link: "https://github.com/EJaredMejia/clipit",
+      linkLabel: "View on GitHub",
       image: clipit,
       title: "Clipit",
       description:
         "Open-source tool that turns long Twitch and Kick streams into TikTok and YouTube Shorts clips, with AI picking moments that fit current trends. Includes a dashboard to publish clips with one click and CI with automated AI code review.",
     },
     {
-      link: "https://e-commerce.jared-mejia.workers.dev/",
-      image: ecommerce,
-      title: "Fintech E-commerce Ecosystem",
-      description:
-        "Architected a scalable e-commerce solution for the financial sector, implementing robust state management and secure transaction workflows with Sequelize/PostgreSQL.",
-    },
-    {
       link: "https://redmedicatel.com/",
+      linkLabel: "Visit site",
       image: RedMedicatel,
-      title: "Healthcare Provider Platform",
+      title: "Red Medicatel",
       description:
-        "Delivered a pixel-perfect, accessible digital presence for a healthcare organization, optimized for SEO and cross-device performance using Next.js.",
+        "Website for a healthcare provider, built with Next.js. Accessible, SEO-friendly and fast on every device.",
     },
     {
       link: "https://drizzle-to-dbml.netlify.app/",
+      linkLabel: "Try it",
       image: drizzleToDbml,
-      title: "Developer Workflow Utility",
+      title: "Drizzle to DBML",
       description:
-        "Developed an open-source tool to accelerate database design processes by automating the conversion of Drizzle ORM schemas into DBML visualizations.",
-    },
-    {
-      link: "https://p0k3w1k1.netlify.app/#/pokedex",
-      image: pokedex,
-      title: "Interactive Data Visualization",
-      description:
-        "Engineered a high-performance data exploration interface utilizing Redux for complex state synchronization and RESTful API optimizations.",
-    },
-    {
-      link: "https://rickandmortylocations.netlify.app/",
-      image: rickAndMorty,
-      title: "Discovery Hub Prototype",
-      description:
-        "Designed and built a character-driven web experience focusing on modern UI design patterns and efficient multi-route navigation structure.",
+        "Open-source tool that converts Drizzle ORM schemas into DBML, so you can see your database as a diagram.",
     },
   ];
 
-  return (
-    <section className="bg-gray-50 py-24 dark:bg-gray-900" id="projects">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            Featured Projects
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-500 dark:text-gray-400">
-            A diverse collection of web applications showcasing my expertise in
-            full-stack development and modern UI design.
-          </p>
-        </div>
+  const [featured, ...rest] = projects;
 
-        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-6 justify-items-center">
-          {projects.map((project, index) => (
-            <EachProject
-              key={index}
-              className={projects.length - 2 === index ? "lg:col-start-2" : ""}
-              {...project}
-            />
-          ))}
-        </div>
+  return (
+    <Section id="projects" title="Projects">
+      <div className="grid gap-x-10 gap-y-16 sm:grid-cols-2">
+        <EachProject featured className="sm:col-span-2" {...featured} />
+        {rest.map((project) => (
+          <EachProject key={project.title} {...project} />
+        ))}
       </div>
-    </section>
+    </Section>
   );
 };
 

@@ -1,47 +1,47 @@
-import { ArrowDown } from "lucide-react";
-import bgImage from "../images/heroimage.jpg";
-import { TypingAnimation } from "./type-animation";
+import CV from "../images/jared-mejia-cv.pdf";
 
 const dateStartedWorking = new Date(2023, 3);
 
 const Home = () => {
-  const heroImage = {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(${bgImage})`,
-  };
+  const years = new Date().getFullYear() - dateStartedWorking.getFullYear();
+
   return (
     <section
       id="home"
-      style={heroImage}
-      className="relative bg-center bg-no-repeat bg-cover bg-fixed h-svh flex flex-col justify-center items-center"
+      className="mx-auto flex min-h-svh max-w-6xl flex-col justify-end px-4 pt-28 pb-16 sm:px-6 md:pb-24"
     >
-      <div className="text-white text-center relative">
-        <h2 className="text-pink font-semibold tracking-wider text-3xl mb-3">
-          Jared Mejía
-        </h2>
-        <div className="h-fit flex items-center sm:block">
-          <TypingAnimation
-            text={["Software Engineer", "Full-stack Developer", "React Expert", "Backend Engineer"]}
-          />
-        </div>
-        <p className="mt-6 text-lg px-2 text-gray-300 max-w-lg mx-auto leading-relaxed">
-          Over {new Date().getFullYear() - dateStartedWorking.getFullYear()}{" "}
-          years building web applications for robotics, banking, healthcare,
-          and education.
+      <div className="hero-rise">
+        <h1 className="text-[clamp(4rem,18vw,10.5rem)] leading-[0.9] font-extrabold tracking-[-0.045em]">
+          Jared
+          <br />
+          Mejía<span className="text-pink">/</span>
+        </h1>
+        <p className="mt-8 max-w-[34ch] text-2xl leading-snug font-medium text-ink sm:text-3xl">
+          Full-stack engineer. {years} years building web apps in TypeScript,
+          React and Node.js, most recently for a Y&nbsp;Combinator-backed
+          robotics startup.
         </p>
-        <a
-          href="#projects"
-          className="btn-animation inline-block rounded-full text-xl border-2 mt-8 border-white py-3 px-6 go-to-btn"
-        >
-          Go to projects
-        </a>
-      </div>
-      <div className="absolute bottom-8">
-        <a href="#iconGoDown" aria-label="Go to projects">
-          <ArrowDown
-            id="iconGoDown"
-            className="size-9 text-white move-up-and-down"
-          />
-        </a>
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4">
+          <a
+            href={CV}
+            type="application/pdf"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full bg-pink-deep px-6 py-3 font-semibold text-white transition-colors hover:bg-ink"
+          >
+            Download CV
+          </a>
+          <a
+            href="#contactMe"
+            className="font-semibold underline decoration-pink decoration-2 underline-offset-6 hover:text-pink-deep"
+          >
+            Get in touch
+          </a>
+        </div>
+        <p className="mt-12 text-muted">
+          Based in Honduras, on Central Time. Open to remote roles with US
+          teams.
+        </p>
       </div>
     </section>
   );

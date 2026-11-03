@@ -3,6 +3,8 @@ type EachProjectProps = {
   title: string;
   description: string;
   link: string;
+  linkLabel: string;
+  featured?: boolean;
   className?: string;
 };
 
@@ -11,38 +13,48 @@ const EachProject = ({
   title,
   description,
   link,
+  linkLabel,
+  featured = false,
   className = "",
 }: EachProjectProps) => {
   return (
-    <a
-      href={link}
-      target="_blank"
-      className={`group block lg:col-span-2 w-full max-w-sm overflow-hidden rounded-xl bg-white shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:bg-gray-800 ${className}`}
+    <article
+      className={`${featured ? "grid items-center gap-8 lg:grid-cols-[3fr_2fr]" : ""} ${className}`}
     >
-      <div className="relative h-48 w-full overflow-hidden">
+      <a
+        href={link}
+        target="_blank"
+        rel="noreferrer"
+        tabIndex={-1}
+        aria-hidden="true"
+        className="block overflow-hidden rounded-lg border border-line bg-white"
+      >
         <img
-          className="h-full w-full object-cover object-center transition-transform duration-500 will-change-transform group-hover:scale-110"
+          className="aspect-2/1 w-full object-cover object-top"
           src={image}
-          alt={title}
+          alt=""
           loading="lazy"
           decoding="async"
         />
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-      </div>
-
-      <div className="flex flex-col gap-2 p-5">
-        <p className="flex items-center gap-2 text-xl font-bold text-gray-900 dark:text-gray-100">
+      </a>
+      <div className={featured ? "" : "mt-6"}>
+        <h3
+          className={`font-bold tracking-tight ${featured ? "text-4xl" : "text-2xl"}`}
+        >
           {title}
-          <span className="ml-auto inline-block -translate-x-2 text-pink opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
-            ↗
-          </span>
-        </p>
-        <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-          {description}
-        </p>
+        </h3>
+        <p className="mt-3 max-w-[60ch] leading-7 text-muted">{description}</p>
+        <a
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-4 inline-block font-semibold underline decoration-pink decoration-2 underline-offset-6 hover:text-pink-deep"
+        >
+          {linkLabel}
+          <span className="sr-only"> ({title}, opens in a new tab)</span>
+        </a>
       </div>
-    </a>
+    </article>
   );
 };
 

@@ -3,26 +3,29 @@ import { Linkedin } from "@/icons/linkein";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-black text-white px-8 pt-8 pb-12">
-      <p className="text-center text-lg mb-5">
-        Jared Mejia {new Date().getFullYear()}
-      </p>
-      <div className="flex justify-center gap-7">
-        <a
-          target="_blank"
-          href="https://github.com/EJaredMejia"
-          className=" cursor-pointer grid place-items-center rounded-full"
-        >
-          <Github fill="white" className="size-7" />
-        </a>
-
-        <a
-          target="_blank"
-          href="https://www.linkedin.com/in/jared-mejia-41b58a23a/"
-          className="cursor-pointer grid place-items-center rounded-full"
-        >
-          <Linkedin className="text-white size-7" />
-        </a>
+    <footer className="border-t border-line">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-8 text-muted sm:px-6">
+        <p>Jared Mejía, {new Date().getFullYear()}</p>
+        <div className="flex gap-5">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://github.com/EJaredMejia"
+            aria-label="GitHub"
+            className="hover:text-ink"
+          >
+            <Github fill="currentColor" className="size-6" />
+          </a>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.linkedin.com/in/jared-mejia-41b58a23a/"
+            aria-label="LinkedIn"
+            className="hover:text-ink"
+          >
+            <Linkedin className="size-6" />
+          </a>
+        </div>
       </div>
     </footer>
   );

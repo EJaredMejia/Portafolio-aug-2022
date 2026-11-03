@@ -8,6 +8,7 @@ import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { useServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { toast } from "sonner";
+import Section from "./section";
 
 const contactSchema = sendEmailSchema.and(z.object({ name: z.string() }));
 
@@ -35,75 +36,78 @@ const Contact = () => {
     const promise = sendEmail({ data: emailInfo });
 
     toast.promise(promise, {
-      loading: "sending email...",
+      loading: "Sending message…",
       success: (data) => {
         return data;
       },
-      error: "Error sending email, try again",
+      error: "Message not sent. Check your connection and try again.",
     });
 
     await promise;
     reset();
   };
+  const fieldClass =
+    "mt-2 w-full rounded-md border border-line bg-white px-4 py-3 text-ink placeholder:text-muted/70 focus:border-pink-deep focus:outline-none";
+
   return (
-    <section className="bg-gray-50  pb-24 dark:bg-gray-900" id="contactMe">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-            Contact me
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-500 dark:text-gray-400">
-            Have a project in mind? Let's talk and build something great
-            together.
-          </p>
-        </div>
-        <form
-          onSubmit={handleSubmit(submitForm)}
-          className="mx-auto mt-16 grid max-w-3xl gap-4 md:grid-cols-2"
-        >
+    <Section id="contactMe" title="Contact">
+      <p className="max-w-[52ch] text-xl leading-8">
+        Hiring for a remote role, or want to talk about a project? Send me a
+        message and I'll reply by email.
+      </p>
+      <form
+        onSubmit={handleSubmit(submitForm)}
+        className="mt-10 grid max-w-3xl gap-5 md:grid-cols-2"
+      >
+        <label className="font-medium">
+          Name
           <input
-            aria-label="Your Name"
-            className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white"
+            className={fieldClass}
             type="text"
-            placeholder="Name..."
+            autoComplete="name"
             required
             {...register("name")}
           />
+        </label>
+        <label className="font-medium">
+          Email
           <input
-            aria-label="Your Email"
             {...register("email")}
-            className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white"
+            className={fieldClass}
             type="email"
-            placeholder="Email address"
+            autoComplete="email"
             required
           />
+        </label>
+        <label className="font-medium md:col-span-2">
+          Subject
           <input
-            aria-label="Subject or Title"
             {...register("title")}
-            className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white md:col-span-2"
+            className={fieldClass}
             type="text"
-            placeholder="Title..."
             required
           />
+        </label>
+        <label className="font-medium md:col-span-2">
+          Message
           <textarea
-            aria-label="Your Message"
             {...register("message")}
-            className="rounded-2xl border border-slate-700 bg-white px-4 py-3 dark:bg-gray-800 dark:text-white md:col-span-2"
-            cols={30}
-            rows={10}
-            placeholder="Message..."
+            className={fieldClass}
+            rows={7}
             required
           />
+        </label>
+        <div className="md:col-span-2">
           <button
             disabled={formState.isSubmitting}
             type="submit"
-            className="mx-auto cursor-pointer inline-block rounded-3xl bg-pink px-8 py-3 font-semibold text-white transition-all hover:opacity-90 md:col-span-2"
+            className="cursor-pointer rounded-full bg-pink-deep px-7 py-3 font-semibold text-white transition-colors hover:bg-ink disabled:cursor-wait disabled:opacity-60"
           >
-            Send message
+            {formState.isSubmitting ? "Sending…" : "Send message"}
           </button>
-        </form>
-      </div>
-    </section>
+        </div>
+      </form>
+    </Section>
   );
 };
 

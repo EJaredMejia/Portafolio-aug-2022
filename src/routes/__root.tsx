@@ -9,7 +9,6 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 
-import heroImage from "@/images/heroimage.jpg?url";
 import logo from "@/images/logo.png?url";
 import openGraph from "@/images/open-graph.jpg?url";
 import appCss from "@/index.css?url";
@@ -46,11 +45,6 @@ export const Route = createRootRoute({
         href: logo,
       },
       {
-        rel: "preload",
-        as: "image",
-        href: heroImage,
-      },
-      {
         rel: "stylesheet",
         href: appCss,
       },
@@ -63,7 +57,7 @@ function RootComponent() {
   return (
     <RootDocument>
       <Outlet />
-      <Toaster theme="dark" />
+      <Toaster theme="light" />
     </RootDocument>
   );
 }
@@ -74,7 +68,7 @@ function RootDocument({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body style={{ backgroundColor: "#000" }} className="bg-black">
+      <body>
         {children}
 
         <Scripts />

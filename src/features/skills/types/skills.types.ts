@@ -1,4 +1,4 @@
-export interface Skill {
+export interface SkillGroup {
   name: string;
-  icon: string;
+  skills: string[];
 }

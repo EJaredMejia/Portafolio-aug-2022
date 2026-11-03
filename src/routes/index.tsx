@@ -34,11 +34,11 @@ function RouteComponent() {
         </Hydrate>
 
         <Hydrate when={visible()}>
-          <Skills />
+          <Projects />
         </Hydrate>
 
         <Hydrate when={visible()}>
-          <Projects />
+          <Skills />
         </Hydrate>
 
         <Hydrate when={visible()} prefetch={idle()}>

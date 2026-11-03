@@ -1,67 +1,57 @@
-import { Menu } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
+
+const links = [
+  { href: "#aboutMe", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contactMe", label: "Contact" },
+];
 
 const Navbar = () => {
   const [isNavVisible, setIsNavVisible] = useState(false);
-
-  const toogleNavBar = () => {
-    setIsNavVisible(!isNavVisible);
-  };
 
   const closeNavBar = () => {
     setIsNavVisible(false);
   };
 
   return (
-    <header className="fixed w-full bg-black/90 backdrop-blur-md z-50">
-      <div className="flex px-5 py-3 items-center justify-between border-b border-white/10 md:justify-between">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-line bg-paper/85 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <a
           href="#home"
-          className="text-2xl font-semibold tracking-widest"
-          style={{ color: "#ff5080" }}
+          className="text-xl font-bold tracking-wide text-pink"
           onClick={closeNavBar}
+          aria-label="Jared Mejía, back to top"
         >
           /JM/
         </a>
-        <div className="md:hidden">
-          <Menu onClick={toogleNavBar} className="size-6 text-white cursor-pointer" />
-        </div>
+        <button
+          type="button"
+          className="md:hidden"
+          aria-label={isNavVisible ? "Close menu" : "Open menu"}
+          aria-expanded={isNavVisible}
+          onClick={() => setIsNavVisible(!isNavVisible)}
+        >
+          {isNavVisible ? <X className="size-6" /> : <Menu className="size-6" />}
+        </button>
         <nav
           className={`${
-            isNavVisible ? "max-h-96 border-b border-white/10" : "max-h-0"
-          } transition-[max-height] duration-300 ease-in-out overflow-hidden top-14 left-0 bg-black/95 backdrop-blur-xl w-full absolute md:bg-transparent md:border-none md:max-h-fit md:static md:w-fit`}
+            isNavVisible ? "max-h-80 border-b" : "max-h-0"
+          } absolute inset-x-0 top-full overflow-hidden bg-paper transition-[max-height] duration-300 md:static md:max-h-none md:border-none md:bg-transparent`}
         >
-          <ul className="text-lg flex flex-col text-white items-center gap-1 py-3 md:flex-row md:gap-8 md:pr-5">
-            <li>
-              <a href="#home" onClick={closeNavBar} className="links-animation cursor-pointer">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#aboutMe" onClick={closeNavBar} className="links-animation cursor-pointer">
-                About me
-              </a>
-            </li>
-            <li>
-              <a href="#experience" onClick={closeNavBar} className="links-animation cursor-pointer">
-                Experience
-              </a>
-            </li>
-            <li>
-              <a href="#skills" onClick={closeNavBar} className="links-animation cursor-pointer">
-                Skills
-              </a>
-            </li>
-            <li>
-              <a href="#projects" onClick={closeNavBar} className="links-animation cursor-pointer">
-                Projects
-              </a>
-            </li>
-            <li>
-              <a href="#contactMe" onClick={closeNavBar} className="links-animation cursor-pointer">
-                Contact me
-              </a>
-            </li>
+          <ul className="flex flex-col gap-1 px-4 py-3 md:flex-row md:gap-8 md:p-0">
+            {links.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={closeNavBar}
+                  className="block py-2 text-muted transition-colors hover:text-ink md:py-0"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
