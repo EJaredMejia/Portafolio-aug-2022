@@ -2,31 +2,31 @@ const Experience = () => {
   const experiences = [
     {
       company: "Robotic Crew",
-      role: "Software Engineer",
+      role: "Software Engineer · Contract",
       date: "March 2026 - September 2026",
       description:
-        "Engineered a cross-device authentication system using Better-Auth and ElysiaJS. Architected a continuous deployment pipeline for a microservices monorepo using GitHub Actions and AWS CDK. Integrated real-time logging and telemetry with ClickHouseDB.",
+        "Contract for Avea Robotics, a Y Combinator-backed robotics teleoperation startup. Built cross-device authentication with Better-Auth and ElysiaJS, including Meta Quest VR headset login. Set up continuous deployment for a microservices monorepo with GitHub Actions and AWS CDK, built a live ClickHouseDB telemetry dashboard for ~25 teleoperated robots, and moved the WebXR WebSocket cache to AWS Valkey (Redis) so connections survive server restarts.",
     },
     {
       company: "Edutechloft",
       role: "Software Engineer",
       date: "September 2025 - March 2026",
       description:
-        "Architected and deployed Azure Functions to automate student status tracking and document generation. Developed dynamic web forms and engineered complex data reports using SSRS.",
+        "Built Azure Functions that automate student status tracking and document generation, replacing manual admin work. Developed dynamic web forms with automated PDF generation, and built SQL Server Reporting Services (SSRS) reports for Sonoran Desert Institute, a US college.",
     },
     {
       company: "Ficohsa",
       role: "Frontend Developer",
       date: "July 2024 - September 2025",
       description:
-        "Developed a high-traffic web application for insurance purchasing. Implemented a micro-frontend architecture using React, Module Federation, and Next.js for enhanced scalability.",
+        "Built the bank's online insurance purchase application, with payments taken directly from customers' bank accounts. Built micro-frontends with React, Module Federation, and Next.js so features ship as independent apps, and maintained the bank's Material UI component library.",
     },
     {
       company: "Ingenieria Digital",
       role: "Full-stack Developer",
       date: "April 2023 - September 2025",
       description:
-        "Integrated insurance provider systems to automate real-time benefit verification. Collaborated on a digital medical records system and a secure cloud storage solution using AWS S3.",
+        "Integrated insurance provider systems to automate real-time benefit verification for patients. Contributed to a digital medical records system with secure file storage on AWS S3, built an online appointment scheduling and payment system, and created an internal Shadcn component library.",
     },
   ];
 

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 384" width="768" height="384">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1f1033"/>
+      <stop offset="1" stop-color="#0b0b14"/>
+    </linearGradient>
+    <linearGradient id="clip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff4f9a"/>
+      <stop offset="1" stop-color="#8a3ffc"/>
+    </linearGradient>
+  </defs>
+  <rect width="768" height="384" fill="url(#bg)"/>
+  <!-- long stream timeline -->
+  <rect x="56" y="300" width="656" height="10" rx="5" fill="#ffffff" opacity="0.12"/>
+  <rect x="168" y="296" width="70" height="18" rx="6" fill="url(#clip)"/>
+  <rect x="402" y="296" width="54" height="18" rx="6" fill="url(#clip)"/>
+  <rect x="590" y="296" width="62" height="18" rx="6" fill="url(#clip)"/>
+  <!-- vertical clips -->
+  <g>
+    <rect x="452" y="54" width="104" height="186" rx="14" fill="none" stroke="url(#clip)" stroke-width="4"/>
+    <polygon points="494,128 494,166 524,147" fill="#ff4f9a"/>
+    <rect x="576" y="74" width="92" height="166" rx="14" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+    <polygon points="613,140 613,172 639,156" fill="#ffffff" fill-opacity="0.5"/>
+  </g>
+  <text x="56" y="150" font-family="Montserrat, Arial, sans-serif" font-size="64" font-weight="700" fill="#ffffff">Clipit</text>
+  <text x="58" y="194" font-family="Montserrat, Arial, sans-serif" font-size="22" fill="#ffffff" fill-opacity="0.7">Streams to short-form clips, picked by AI</text>
+</svg>

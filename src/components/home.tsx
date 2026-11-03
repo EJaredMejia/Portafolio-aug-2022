@@ -25,8 +25,8 @@ const Home = () => {
         </div>
         <p className="mt-6 text-lg px-2 text-gray-300 max-w-lg mx-auto leading-relaxed">
           Over {new Date().getFullYear() - dateStartedWorking.getFullYear()}{" "}
-          years of experience delivering impactful web solutions and workflow
-          automation for banking, healthcare, and education sectors.
+          years building web applications for robotics, banking, healthcare,
+          and education.
         </p>
         <a
           href="#projects"

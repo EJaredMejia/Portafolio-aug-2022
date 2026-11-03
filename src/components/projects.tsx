@@ -3,10 +3,18 @@ import pokedex from "../images/proyecto pokedex.png";
 import RedMedicatel from "../images/red-medicatel.png";
 import rickAndMorty from "../images/Rick and morty.png";
 import drizzleToDbml from "../images/drizzle-to-dbml.png";
+import clipit from "../images/clipit.svg";
 import EachProject from "./each-project";
 
 const Projects = () => {
   const projects = [
+    {
+      link: "https://github.com/EJaredMejia/clipit",
+      image: clipit,
+      title: "Clipit",
+      description:
+        "Open-source tool that turns long Twitch and Kick streams into TikTok and YouTube Shorts clips, with AI picking moments that fit current trends. Includes a dashboard to publish clips with one click and CI with automated AI code review.",
+    },
     {
       link: "https://e-commerce.jared-mejia.workers.dev/",
       image: ecommerce,

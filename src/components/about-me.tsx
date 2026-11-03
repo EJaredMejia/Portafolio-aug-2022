@@ -9,20 +9,24 @@ const AboutMe = () => {
             About Me
           </h2>
           <h3 className="mt-4 text-xl font-semibold tracking-wider text-pink">
-            SOFTWARE ENGINEER
+            FULL-STACK ENGINEER
           </h3>
           <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-            I am a versatile Software Engineer with a proven track record of
-            delivering impactful web applications across banking, healthcare,
-            education, and robotics. My experience involves driving innovation
-            by architecting serverless workflows (AWS CDK, Azure Functions)
-            and engineering high-performance systems with modern backend technologies like ElysiaJS and ClickHouseDB.
+            Full-stack developer with 3+ years building web applications in
+            TypeScript, React, and Node.js on AWS and Azure, across robotics,
+            banking, healthcare, and education.
           </p>
           <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
-            I've scaled frontend architectures using Micro-frontends (Module Federation)
-            and integrated secure cloud solutions. I specialize in bridging the
-            gap between robust backend logic and intuitive, high-performance
-            user interfaces across diverse sectors.
+            Most recently I worked on contract for Avea Robotics, a Y
+            Combinator-backed teleoperation startup, where I built cross-device
+            authentication for Meta Quest VR headsets, a CI/CD pipeline with
+            GitHub Actions and AWS CDK, and a real-time telemetry dashboard on
+            ClickHouse.
+          </p>
+          <p className="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
+            I test with Vitest and Storybook and work daily with Claude Code and
+            Greptile. Based in Honduras (Central Time), fluent in English, and
+            open to remote roles with US teams.
           </p>
           <div className="mt-10 flex items-center gap-x-6">
             <a
