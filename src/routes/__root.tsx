@@ -13,6 +13,7 @@ import logo from "@/images/logo.png?url";
 import openGraph from "@/images/open-graph.jpg?url";
 import appCss from "@/index.css?url";
 
+import NotFound from "@/components/not-found";
 import { SITE_URL, seo } from "@/utils/seo";
 import { type ReactNode } from "react";
 import { Toaster } from "sonner";
@@ -72,6 +73,7 @@ export const Route = createRootRoute({
     ],
   }),
   component: RootComponent,
+  notFoundComponent: NotFound,
 });
 
 function RootComponent() {
