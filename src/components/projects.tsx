@@ -35,7 +35,7 @@ const Projects = () => {
   const [featured, ...rest] = projects;
 
   return (
-    <Section id="projects" title="Projects">
+    <Section id="projects" title="Projects" tone="ink">
       <div className="grid gap-x-10 gap-y-16 sm:grid-cols-2">
         <EachProject featured className="sm:col-span-2" {...featured} />
         {rest.map((project) => (

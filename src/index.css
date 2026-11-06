@@ -61,6 +61,36 @@
   }
 }
 
+/* Section tones re-scope the palette, so every utility inside (bg-paper, ring-paper, text-muted...) follows along */
+.tone-band {
+  --color-paper: #eaedf5;
+  --color-line: #d3d8e4;
+  background-color: var(--color-paper);
+}
+.tone-ink {
+  --color-paper: #12162a;
+  --color-ink: #eef0f7;
+  --color-muted: #a3abc0;
+  --color-line: #2a3150;
+  --color-field: #1a1f37;
+  --color-pink-deep: #ff6b93;
+  --color-on-pink: #10131f;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+@media (prefers-color-scheme: dark) {
+  .tone-band {
+    --color-paper: #181d32;
+    --color-line: #2d3452;
+    --color-field: #1f2540;
+  }
+  .tone-ink {
+    --color-paper: #1b2038;
+    --color-line: #323a5c;
+    --color-field: #232946;
+  }
+}
+
 /* One page-load moment: the hero lines arrive in sequence */
 @keyframes rise {
   from {
@@ -81,7 +111,6 @@
 .hero-rise > :nth-child(4) {
   animation-delay: 0.24s;
 }
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
