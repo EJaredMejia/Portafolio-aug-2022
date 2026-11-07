@@ -33,23 +33,24 @@ const Experience = () => {
   ];
 
   return (
-    <Section id="experience" title="Experience" tone="band">
+    <Section id="experience" title="Experience" tone="mist">
       <ol className="divide-y divide-line border-y border-line">
         {experiences.map((exp) => (
           <li
             key={exp.company}
-            className="grid gap-x-8 gap-y-2 py-10 first:pt-8 lg:grid-cols-[10rem_1fr]"
+            className="grid gap-x-12 gap-y-4 py-10 md:grid-cols-[17rem_1fr] md:py-14"
           >
-            <p className="pt-1.5 text-muted tabular-nums">{exp.date}</p>
-            <div>
-              <h3 className="text-2xl font-bold tracking-tight">
+            {/* Stays in view while the description scrolls past */}
+            <div className="md:sticky md:top-24 md:self-start">
+              <p className="text-muted tabular-nums">{exp.date}</p>
+              <h3 className="mt-1 text-3xl font-bold tracking-tight">
                 {exp.company}
               </h3>
-              <p className="mt-1 font-medium text-pink-deep">{exp.role}</p>
-              <p className="mt-4 max-w-[68ch] leading-7 text-muted">
-                {exp.description}
-              </p>
+              <p className="mt-1 font-semibold text-pink-deep">{exp.role}</p>
             </div>
+            <p className="max-w-[62ch] text-lg leading-8 text-muted">
+              {exp.description}
+            </p>
           </li>
         ))}
       </ol>

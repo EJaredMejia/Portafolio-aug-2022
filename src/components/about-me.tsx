@@ -2,7 +2,7 @@ import Section from "./section";
 
 const AboutMe = () => {
   return (
-    <Section id="aboutMe" title="About">
+    <Section id="aboutMe" title="About" tone="white">
       <div className="max-w-[62ch] space-y-5 text-lg leading-8 text-muted">
         <p className="text-xl leading-8 text-ink">
           Full-stack developer with 3+ years building web applications in

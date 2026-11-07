@@ -3,7 +3,8 @@ import { Linkedin } from "@/icons/linkein";
 
 const Footer = () => {
   return (
-    <footer className="tone-ink">
+    <footer className="tone-ink bg-paper">
+      {/* Continues the Contact sheet, so it shares its color and drops the divider */}
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-8 text-muted sm:px-6">
         <p>Jared Mejía, {new Date().getFullYear()}</p>
         <div className="flex gap-5">

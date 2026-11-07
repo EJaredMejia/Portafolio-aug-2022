@@ -2,26 +2,30 @@ import { type ReactNode } from "react";
 
 type SectionProps = {
   id: string;
-  title: string;
-  // band and ink re-scope the palette (see index.css) so sections read as distinct
-  tone?: "paper" | "band" | "ink";
+  title: ReactNode;
+  // Each tone re-scopes the palette (see index.css), so sheets read as distinct pages
+  tone: "white" | "mist" | "pink" | "ink";
   children: ReactNode;
 };
 
-// Index layout shared by every content section: title on the left, content on the right
-const Section = ({ id, title, tone = "paper", children }: SectionProps) => {
+// A full-width sheet that stacks over the previous one as you scroll
+const Section = ({ id, title, tone, children }: SectionProps) => {
   return (
-    <section
-      id={id}
-      className={tone === "paper" ? "border-t border-line" : `tone-${tone}`}
-    >
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-20 sm:px-6 md:grid-cols-[13rem_1fr] md:gap-12 md:py-28">
-        <h2 className="text-3xl font-bold tracking-tight md:sticky md:top-28 md:self-start md:text-2xl">
-          {title}
-        </h2>
-        <div className="min-w-0">{children}</div>
-      </div>
-    </section>
+    <>
+      {/* Anchor target in normal flow: a link to a pinned sheet would land wherever it happens to be stuck */}
+      <div id={id} aria-hidden="true" />
+      <section aria-labelledby={`${id}-title`} className={`sheet sheet-raised tone-${tone}`}>
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
+          <h2
+            id={`${id}-title`}
+            className="text-5xl font-extrabold tracking-[-0.035em] sm:text-6xl md:text-7xl"
+          >
+            {title}
+          </h2>
+          <div className="mt-12 md:mt-16">{children}</div>
+        </div>
+      </section>
+    </>
   );
 };
 

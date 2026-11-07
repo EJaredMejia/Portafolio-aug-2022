@@ -6,11 +6,11 @@ const Home = () => {
   const years = new Date().getFullYear() - dateStartedWorking.getFullYear();
 
   return (
-    <section
-      id="home"
-      className="mx-auto flex min-h-svh max-w-6xl flex-col justify-end px-4 pt-28 pb-16 sm:px-6 md:pb-24"
-    >
-      <div className="hero-rise">
+    // Anchor in normal flow, like Section: #home on the pinned sheet itself lands mid-page
+    <>
+    <div id="home" aria-hidden="true" />
+    <section aria-label="Introduction" className="sheet">
+      <div className="hero-rise mx-auto flex min-h-svh max-w-6xl flex-col justify-end px-4 pt-28 pb-16 sm:px-6 md:pb-24">
         <h1 className="text-[clamp(4rem,18vw,10.5rem)] leading-[0.9] font-extrabold tracking-[-0.045em]">
           Jared
           <br />
@@ -44,6 +44,7 @@ const Home = () => {
         </p>
       </div>
     </section>
+    </>
   );
 };
 

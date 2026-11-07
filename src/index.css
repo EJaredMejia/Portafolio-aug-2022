@@ -61,33 +61,65 @@
   }
 }
 
-/* Section tones re-scope the palette, so every utility inside (bg-paper, ring-paper, text-muted...) follows along */
-.tone-band {
-  --color-paper: #eaedf5;
-  --color-line: #d3d8e4;
-  background-color: var(--color-paper);
-}
-.tone-ink {
-  --color-paper: #12162a;
-  --color-ink: #eef0f7;
-  --color-muted: #a3abc0;
-  --color-line: #2a3150;
-  --color-field: #1a1f37;
-  --color-pink-deep: #ff6b93;
-  --color-on-pink: #10131f;
+/* Sheets: each section pins once its bottom is in view, and the next one slides over it.
+   --sheet-top is set in routes/index.tsx; until then top is invalid, so nothing sticks. */
+.sheet {
+  position: relative;
   background-color: var(--color-paper);
   color: var(--color-ink);
 }
+/* Every sheet after the hero, which is the bottom of the stack */
+.sheet-raised {
+  border-radius: 2rem 2rem 0 0;
+  box-shadow: 0 -16px 40px rgb(10 12 24 / 0.08);
+}
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .sheet {
+    position: sticky;
+    top: var(--sheet-top);
+  }
+}
+
+/* Tones re-scope the palette, so every utility inside a sheet (bg-paper, text-muted...) follows along */
+.tone-white {
+  --color-paper: #ffffff;
+  --color-field: #f5f6fa;
+}
+.tone-mist {
+  --color-paper: #e9ecf4;
+  --color-line: #d3d8e4;
+}
+.tone-pink {
+  --color-paper: #ff6f98;
+  --color-ink: #151a2d;
+  --color-muted: #3f1426;
+  --color-line: #e8527f;
+  --color-pink: #151a2d;
+  --color-pink-deep: #151a2d;
+}
+.tone-ink {
+  --color-paper: #151a2d;
+  --color-ink: #eef0f7;
+  --color-muted: #a3abc0;
+  --color-line: #2c3352;
+  --color-field: #1d2340;
+  --color-pink-deep: #ff6b93;
+  --color-on-pink: #10131f;
+}
 @media (prefers-color-scheme: dark) {
-  .tone-band {
-    --color-paper: #181d32;
-    --color-line: #2d3452;
-    --color-field: #1f2540;
+  .tone-white {
+    --color-paper: #171b2b;
+    --color-field: #10131f;
+  }
+  .tone-mist {
+    --color-paper: #1e2338;
+    --color-line: #2f3654;
+    --color-field: #171b2b;
   }
   .tone-ink {
-    --color-paper: #1b2038;
-    --color-line: #323a5c;
-    --color-field: #232946;
+    --color-paper: #090b14;
+    --color-line: #232945;
+    --color-field: #131729;
   }
 }
 

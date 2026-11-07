@@ -52,7 +52,7 @@ export function Skills() {
   ];
 
   return (
-    <Section id="skills" title="Skills">
+    <Section id="skills" title="Skills" tone="white">
       <dl className="divide-y divide-line border-y border-line">
         {skillGroups.map((group) => (
           <div
