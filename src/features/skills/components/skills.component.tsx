@@ -53,14 +53,15 @@ export function Skills() {
 
   return (
     <Section id="skills" title="Skills">
-      <dl className="grid gap-x-12 gap-y-10 sm:grid-cols-2">
+      <dl className="divide-y divide-line border-y border-line">
         {skillGroups.map((group) => (
-          <div key={group.name}>
-            <dt className="border-b border-line pb-3 font-semibold">
-              {group.name}
-            </dt>
-            <dd className="mt-4">
-              <ul className="flex flex-wrap gap-x-5 gap-y-2 text-lg text-muted">
+          <div
+            key={group.name}
+            className="grid gap-2 py-6 sm:grid-cols-[11rem_1fr] sm:gap-8"
+          >
+            <dt className="font-semibold">{group.name}</dt>
+            <dd>
+              <ul className="flex flex-wrap gap-x-5 gap-y-1 text-lg text-muted">
                 {group.skills.map((skill) => (
                   <li key={skill}>{skill}</li>
                 ))}

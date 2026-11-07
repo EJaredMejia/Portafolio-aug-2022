@@ -3,7 +3,7 @@ import { Linkedin } from "@/icons/linkein";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-line">
+    <footer className="tone-ink">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-8 text-muted sm:px-6">
         <p>Jared Mejía, {new Date().getFullYear()}</p>
         <div className="flex gap-5">

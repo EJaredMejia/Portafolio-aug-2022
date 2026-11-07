@@ -6,6 +6,8 @@
     "nodejs_compat"
   ],
   "main": "@tanstack/react-start/server-entry",
+  // PR previews (.github/workflows/preview.yml) are served from Version URLs
+  "preview_urls": true,
   "observability": {
     "enabled": true,
   },

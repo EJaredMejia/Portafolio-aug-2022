@@ -50,14 +50,35 @@ const Contact = () => {
     "mt-2 w-full rounded-md border border-line bg-field px-4 py-3 text-ink placeholder:text-muted/70 focus:border-pink-deep focus:outline-none";
 
   return (
-    <Section id="contactMe" title="Contact">
-      <p className="max-w-[52ch] text-xl leading-8">
+    <Section id="contactMe" title="Contact" tone="band">
+      <p className="max-w-[40ch] text-2xl leading-snug font-medium sm:text-3xl">
         Hiring for a remote role, or want to talk about a project? Send me a
         message and I'll reply by email.
       </p>
+      <p className="mt-6 text-muted">
+        Or find me on{" "}
+        <a
+          href="https://www.linkedin.com/in/jared-mejia-41b58a23a/"
+          target="_blank"
+          rel="noreferrer"
+          className="font-semibold text-ink underline decoration-pink decoration-2 underline-offset-6 hover:text-pink-deep"
+        >
+          LinkedIn
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://github.com/EJaredMejia"
+          target="_blank"
+          rel="noreferrer"
+          className="font-semibold text-ink underline decoration-pink decoration-2 underline-offset-6 hover:text-pink-deep"
+        >
+          GitHub
+        </a>
+        .
+      </p>
       <form
         onSubmit={handleSubmit(submitForm)}
-        className="mt-10 grid max-w-3xl gap-5 md:grid-cols-2"
+        className="mt-12 grid max-w-3xl gap-5 md:grid-cols-2"
       >
         <label className="font-medium">
           Name
