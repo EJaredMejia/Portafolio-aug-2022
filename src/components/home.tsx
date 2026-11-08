@@ -1,9 +1,8 @@
+import { yearsOfExperience } from "@/utils/experience";
 import CV from "../images/jared-mejia-cv.pdf";
 
-const dateStartedWorking = new Date(2023, 3);
-
 const Home = () => {
-  const years = new Date().getFullYear() - dateStartedWorking.getFullYear();
+  const years = yearsOfExperience();
 
   return (
     // Anchor in normal flow, like Section: #home on the pinned sheet itself lands mid-page

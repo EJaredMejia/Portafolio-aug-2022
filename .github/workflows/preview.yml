@@ -98,8 +98,10 @@ jobs:
           VERSION: ${{ steps.prev.outputs.version }}
           COMMENT_ID: ${{ steps.prev.outputs.comment_id }}
         run: |
+          # Cleanup only: a refused or already-gone version must not fail the check or skip the comment update
           curl -fsS -X DELETE -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
-            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/workers/$WORKER/versions/$VERSION"
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/workers/$WORKER/versions/$VERSION" \
+            || echo "::warning::Could not delete preview version $VERSION"
           if [ "${{ github.event.action }}" = closed ]; then
             gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$COMMENT_ID" \
               -f body="$MARKER

@@ -89,14 +89,6 @@
   --color-paper: #e9ecf4;
   --color-line: #d3d8e4;
 }
-.tone-pink {
-  --color-paper: #ff6f98;
-  --color-ink: #151a2d;
-  --color-muted: #3f1426;
-  --color-line: #e8527f;
-  --color-pink: #151a2d;
-  --color-pink-deep: #151a2d;
-}
 .tone-ink {
   --color-paper: #151a2d;
   --color-ink: #eef0f7;

@@ -4,7 +4,7 @@ type SectionProps = {
   id: string;
   title: ReactNode;
   // Each tone re-scopes the palette (see index.css), so sheets read as distinct pages
-  tone: "white" | "mist" | "pink" | "ink";
+  tone: "white" | "mist" | "ink";
   children: ReactNode;
 };
 

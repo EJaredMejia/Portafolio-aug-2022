@@ -43,8 +43,12 @@ const Contact = () => {
       error: "Message not sent. Check your connection and try again.",
     });
 
-    await promise;
-    reset();
+    try {
+      await promise;
+      reset();
+    } catch {
+      // The error toast already told the user; keep their text so they can retry
+    }
   };
   const fieldClass =
     "mt-2 w-full rounded-md border border-line bg-field px-4 py-3 text-ink placeholder:text-muted/70 focus:border-pink-deep focus:outline-none";

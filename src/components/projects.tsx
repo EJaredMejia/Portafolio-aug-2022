@@ -51,11 +51,11 @@ const Projects = () => {
   ];
 
   return (
-    <Section id="projects" title="Projects" tone="pink">
+    <Section id="projects" title="Projects" tone="ink">
       <div className="md:grid md:grid-cols-[6fr_5fr] md:gap-14">
         <div
           aria-hidden="true"
-          className="sticky top-[18vh] hidden self-start overflow-hidden rounded-2xl border-2 border-ink bg-ink md:grid"
+          className="sticky top-[18vh] hidden self-start overflow-hidden rounded-2xl border border-line bg-field md:grid"
         >
           {projects.map((project, i) => (
             <img

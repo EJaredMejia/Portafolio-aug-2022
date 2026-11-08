@@ -14,6 +14,7 @@ import openGraph from "@/images/open-graph.jpg?url";
 import appCss from "@/index.css?url";
 
 import NotFound from "@/components/not-found";
+import { yearsOfExperience } from "@/utils/experience";
 import { SITE_URL, seo } from "@/utils/seo";
 import { type ReactNode } from "react";
 import { Toaster } from "sonner";
@@ -35,14 +36,14 @@ export const Route = createRootRoute({
       ...seo({
         title: "Jared Mejía, Full-stack Engineer (TypeScript, React, Node.js)",
         description:
-          "Full-stack engineer with 3+ years building web apps in TypeScript, React and Node.js on AWS and Azure. Open to remote roles with US teams.",
+          `Full-stack engineer with ${yearsOfExperience()}+ years building web apps in TypeScript, React and Node.js on AWS and Azure. Open to remote roles with US teams.`,
         keywords:
           "Jared Mejia, full-stack engineer, TypeScript, React, Node.js, AWS, remote",
         image: openGraph,
       }),
     ],
     links: [
-      // The catch-all route serves this page at any path; point search engines at the real one
+      // Collapses variants like ?utm_source=... or the workers.dev preview URLs onto the one real URL
       { rel: "canonical", href: `${SITE_URL}/` },
       {
         rel: "icon",
