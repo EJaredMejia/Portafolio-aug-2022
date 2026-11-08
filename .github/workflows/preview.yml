@@ -1,0 +1,109 @@
+name: PR preview
+
+# Each push to a PR uploads a Worker version under the alias pr-<number> (production is untouched).
+# The version id lives in a marker in the bot's PR comment, so the next push or the close can delete it.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+concurrency:
+  group: pr-preview-${{ github.event.number }}
+
+permissions:
+  contents: read
+  pull-requests: write
+
+env:
+  WORKER: portfolio
+  PR: ${{ github.event.number }}
+  # GITHUB_SHA is the temporary merge commit on pull_request events; show the branch head instead
+  HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+  MARKER: "<!-- pr-preview -->"
+  GH_TOKEN: ${{ github.token }}
+  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+jobs:
+  preview:
+    # Fork PRs get no secrets, so they get no preview
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Find the previous preview
+        id: prev
+        run: |
+          comment_id=$(gh api --paginate "repos/$GITHUB_REPOSITORY/issues/$PR/comments" \
+            --jq ".[] | select(.body | contains(\"$MARKER\")) | .id" | head -n1)
+          version=""
+          if [ -n "$comment_id" ]; then
+            version=$(gh api "repos/$GITHUB_REPOSITORY/issues/comments/$comment_id" --jq .body \
+              | grep -oP 'preview-version:\K[0-9a-f-]+' || true)
+          fi
+          echo "comment_id=$comment_id" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - if: github.event.action != 'closed'
+        uses: actions/checkout@v4
+      - if: github.event.action != 'closed'
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.26.2
+      - if: github.event.action != 'closed'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Build and upload preview
+        if: github.event.action != 'closed'
+        id: upload
+        run: |
+          pnpm install --frozen-lockfile
+          # wrangler types reads secret names from .dev.vars; real values live in Cloudflare secrets
+          cp .dev.vars.example .dev.vars
+          pnpm run build
+          out=$(pnpm exec wrangler versions upload --preview-alias "pr-$PR" \
+            --message "PR #$PR ${HEAD_SHA::7}" 2>&1 | tee /dev/stderr)
+          version=$(echo "$out" | grep -oP 'Worker Version ID: \K[0-9a-f-]+' || true)
+          url=$(echo "$out" | grep -oP 'Version Preview Alias URL: \K\S+' || true)
+          if [ -z "$version" ] || [ -z "$url" ]; then
+            # No alias URL means Version URLs are off for this Worker (preview_urls in wrangler.jsonc)
+            echo "::error::Could not read the version id or preview URL from wrangler's output"
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+
+      - name: Post the preview link
+        if: github.event.action != 'closed'
+        env:
+          URL: ${{ steps.upload.outputs.url }}
+          VERSION: ${{ steps.upload.outputs.version }}
+          COMMENT_ID: ${{ steps.prev.outputs.comment_id }}
+        run: |
+          body="$MARKER
+          <!-- preview-version:$VERSION -->
+          **Preview:** $URL
+
+          Built from ${HEAD_SHA::7}. The contact form here sends real email. This preview is deleted when the PR closes."
+          if [ -n "$COMMENT_ID" ]; then
+            gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$COMMENT_ID" -f body="$body" > /dev/null
+          else
+            gh api "repos/$GITHUB_REPOSITORY/issues/$PR/comments" -f body="$body" > /dev/null
+          fi
+
+      - name: Delete the replaced or closed preview
+        if: steps.prev.outputs.version != ''
+        env:
+          VERSION: ${{ steps.prev.outputs.version }}
+          COMMENT_ID: ${{ steps.prev.outputs.comment_id }}
+        run: |
+          # Cleanup only: a refused or already-gone version must not fail the check or skip the comment update
+          curl -fsS -X DELETE -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+            "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/workers/$WORKER/versions/$VERSION" \
+            || echo "::warning::Could not delete preview version $VERSION"
+          if [ "${{ github.event.action }}" = closed ]; then
+            gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$COMMENT_ID" \
+              -f body="$MARKER
+          Preview deleted because the PR was closed." > /dev/null
+          fi

@@ -1,10 +1,28 @@
 import clipit from "../images/clipit.svg";
 import drizzleToDbml from "../images/drizzle-to-dbml.png";
 import RedMedicatel from "../images/red-medicatel.png";
+import { useEffect, useRef, useState } from "react";
 import EachProject from "./each-project";
 import Section from "./section";
 
 const Projects = () => {
+  const [active, setActive] = useState(0);
+  const items = useRef<(HTMLElement | null)[]>([]);
+
+  // The project crossing the middle of the screen drives the pinned screenshot
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting)
+            setActive(items.current.indexOf(entry.target as HTMLElement));
+        }),
+      { rootMargin: "-45% 0px -45% 0px" },
+    );
+    items.current.forEach((item) => item && observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
   const projects = [
     {
       link: "https://github.com/EJaredMejia/clipit",
@@ -32,15 +50,35 @@ const Projects = () => {
     },
   ];
 
-  const [featured, ...rest] = projects;
-
   return (
-    <Section id="projects" title="Projects">
-      <div className="grid gap-x-10 gap-y-16 sm:grid-cols-2">
-        <EachProject featured className="sm:col-span-2" {...featured} />
-        {rest.map((project) => (
-          <EachProject key={project.title} {...project} />
-        ))}
+    <Section id="projects" title="Projects" tone="ink">
+      <div className="md:grid md:grid-cols-[6fr_5fr] md:gap-14">
+        <div
+          aria-hidden="true"
+          className="sticky top-[18vh] hidden self-start overflow-hidden rounded-2xl border border-line bg-field md:grid"
+        >
+          {projects.map((project, i) => (
+            <img
+              key={project.title}
+              className={`col-start-1 row-start-1 aspect-16/10 w-full object-cover object-top transition-opacity duration-500 ${i === active ? "opacity-100" : "opacity-0"}`}
+              src={project.image}
+              alt=""
+              decoding="async"
+            />
+          ))}
+        </div>
+        <div>
+          {projects.map((project, i) => (
+            <EachProject
+              key={project.title}
+              ref={(item) => {
+                items.current[i] = item;
+              }}
+              active={i === active}
+              {...project}
+            />
+          ))}
+        </div>
       </div>
     </Section>
   );

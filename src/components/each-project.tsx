@@ -1,11 +1,14 @@
+import { type Ref } from "react";
+
 type EachProjectProps = {
   image: string;
   title: string;
   description: string;
   link: string;
   linkLabel: string;
-  featured?: boolean;
-  className?: string;
+  // The project currently matched by the pinned screenshot (desktop only)
+  active: boolean;
+  ref: Ref<HTMLElement>;
 };
 
 const EachProject = ({
@@ -14,46 +17,44 @@ const EachProject = ({
   description,
   link,
   linkLabel,
-  featured = false,
-  className = "",
+  active,
+  ref,
 }: EachProjectProps) => {
   return (
     <article
-      className={`${featured ? "grid items-center gap-8 lg:grid-cols-[3fr_2fr]" : ""} ${className}`}
+      ref={ref}
+      className={`py-10 first:pt-0 md:flex md:min-h-[70vh] md:flex-col md:justify-center md:py-0 md:transition-opacity md:duration-300 ${active ? "" : "md:opacity-40"}`}
     >
+      {/* Phones have no pinned screenshot, so each project shows its own */}
       <a
         href={link}
         target="_blank"
         rel="noreferrer"
         tabIndex={-1}
         aria-hidden="true"
-        className="block overflow-hidden rounded-lg border border-line bg-field"
+        className="mb-6 block overflow-hidden rounded-xl border border-line bg-field md:hidden"
       >
         <img
-          className="aspect-2/1 w-full object-cover object-top"
+          className="aspect-16/10 w-full object-cover object-top"
           src={image}
           alt=""
           loading="lazy"
           decoding="async"
         />
       </a>
-      <div className={featured ? "" : "mt-6"}>
-        <h3
-          className={`font-bold tracking-tight ${featured ? "text-4xl" : "text-2xl"}`}
-        >
-          {title}
-        </h3>
-        <p className="mt-3 max-w-[60ch] leading-7 text-muted">{description}</p>
-        <a
-          href={link}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-4 inline-block font-semibold underline decoration-pink decoration-2 underline-offset-6 hover:text-pink-deep"
-        >
-          {linkLabel}
-          <span className="sr-only"> ({title}, opens in a new tab)</span>
-        </a>
-      </div>
+      <h3 className="text-4xl font-bold tracking-tight">{title}</h3>
+      <p className="mt-3 max-w-[46ch] text-lg leading-8 text-muted">
+        {description}
+      </p>
+      <a
+        href={link}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-5 inline-block w-fit font-semibold underline decoration-pink decoration-2 underline-offset-6 hover:decoration-4"
+      >
+        {linkLabel}
+        <span className="sr-only"> ({title}, opens in a new tab)</span>
+      </a>
     </article>
   );
 };
